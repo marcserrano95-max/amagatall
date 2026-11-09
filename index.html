@@ -5,392 +5,440 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Amagatall d'Hilari · Associació Cultural Musical · València</title>
 <meta name="description" content="Un lloc on amagar-te i ser lliure. Festes underground, espai de lloguer i comunitat de socis a València.">
-<meta name="theme-color" content="#120c18">
+<meta name="theme-color" content="#e60001">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Fragment+Mono&family=Lexend+Exa:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-@font-face{font-family:"Cond";src:url(texgyreheroscn-bold.otf);font-weight:700}
-@font-face{font-family:"Cond";src:url(texgyreheroscn-bolditalic.otf);font-weight:700;font-style:italic}
-@font-face{font-family:"Inter";src:url(Inter-Regular.otf);font-weight:400}
-@font-face{font-family:"Inter";src:url(Inter-Medium.otf);font-weight:500}
-@font-face{font-family:"Inter";src:url(Inter-SemiBold.otf);font-weight:600}
-:root{--ink:#120c18;--ink-2:#1d1526;--ink-3:#271d32;--line:#3a2f45;--bone:#efe9df;--mute:#a69bb2;--bb:#f2e600;--od:#8f6bff;--ok:#5be3a0;--err:#ff5c6c;--e:cubic-bezier(.2,.8,.2,1);--sh:0 30px 80px -40px #000}
+:root{--red:#ff0002;--red-2:#e00001;--red-3:#b80001;--cream:#ede3dd;--paper:#f6f0ec;--ink:#202020;--blue:#2443ff;--t1:#f5d67a;--t2:#a8d5ba;--t3:#e8b4b8;--t4:#b5c7e8;--e:cubic-bezier(.2,.8,.2,1)}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{background:var(--ink);color:var(--bone);font:400 17px/1.6 "Inter",system-ui,sans-serif;overflow-x:clip}
+body{background:var(--cream);color:var(--red);font:400 17px/1.55 "DM Sans",system-ui,sans-serif;overflow-x:clip}
 img,video,svg{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
 button,input,select,textarea{font:inherit;color:inherit;background:none;border:0}
 button{cursor:pointer}
-:focus-visible{outline:2px solid var(--od);outline-offset:3px;border-radius:4px}
-.wrap{width:min(1240px,calc(100% - 48px));margin-inline:auto}
-.d{font-family:"Cond";font-weight:700;line-height:.9;letter-spacing:-.01em}
-.mute{color:var(--mute)}
-h2.d{font-size:clamp(48px,7vw,96px)}
-.lede{font-size:clamp(17px,1.5vw,21px);color:var(--mute);max-width:56ch}
-section{padding:120px 0;position:relative}
-.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 24px;border-radius:999px;font-weight:600;font-size:15.5px;transition:transform .2s var(--e),background .25s,color .25s,box-shadow .25s}
-.btn.y{background:var(--bb);color:var(--ink)}
-.btn.y:hover{box-shadow:0 0 0 6px #f2e60026}
-.btn.o{box-shadow:inset 0 0 0 1.5px var(--bone)}
-.btn.o:hover{background:var(--bone);color:var(--ink)}
-.btn:active{transform:scale(.96)}
-.g>*,.sh>*,.ticket>*,.yr>*,.film>*,.cola>*{min-width:0}
-.sh{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:64px}
-.sh .lede{justify-self:end}
-
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+.wrap{width:calc(100% - 48px);max-width:1400px;margin-inline:auto}
+.x1{font-family:"Lexend Exa",sans-serif;font-weight:300;text-transform:uppercase;letter-spacing:-.04em;line-height:.98}
+.mono{font-family:"Fragment Mono",ui-monospace,monospace}
+section{position:relative}
+.g>*,.two>*,.wrap>*{min-width:0}
+/* tint (template's red monochrome photos) */
+.tint{position:relative;overflow:hidden;background:var(--red)}
+.tint img,.tint video{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.15) brightness(1.4)}
+.tint:after{content:"";position:absolute;inset:0;background:var(--red);mix-blend-mode:multiply;pointer-events:none}
+.tint.b:after{background:var(--blue)}
+.tint.b{background:var(--blue)}
+/* buttons */
+.tk{display:inline-flex;align-items:stretch;gap:2px;font-size:15px;font-weight:500;text-transform:uppercase;letter-spacing:.01em}
+.tk span{background:#fff;color:var(--ink);padding:13px 16px;display:flex;align-items:center;transition:background .25s,color .25s}
+.tk i{background:#fff;color:var(--ink);width:46px;display:grid;place-items:center;border-left:1px dashed #20202055;transition:background .25s,color .25s,transform .3s var(--e)}
+.tk i svg{width:22px}
+.tk:hover span,.tk:hover i{background:var(--ink);color:#fff}
+.tk:hover i{transform:rotate(-12deg)}
+.tk:active{transform:scale(.97)}
+.tk.r span,.tk.r i{background:var(--red);color:#fff;border-color:#ffffff66}
+.tk.r:hover span,.tk.r:hover i{background:var(--ink)}
+.pill{display:inline-flex;align-items:center;gap:18px;background:var(--red);color:#fff;border-radius:999px;padding:8px 8px 8px 26px;font-size:15px;font-weight:500;text-transform:uppercase}
+.eyes{display:flex;gap:4px}
+.eyes b{width:40px;height:40px;border-radius:50%;background:#fff;display:grid;place-items:center}
+.eyes b:after{content:"";width:11px;height:11px;border-radius:50%;background:var(--ink);transform:translate(var(--ex,0),var(--ey,0));transition:transform .15s}
 /* nav */
-.nav{position:fixed;inset:0 0 auto;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:16px 24px;transition:background .4s,backdrop-filter .4s}
-.nav.s{background:#120c18d9;-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
-.logo{display:flex;flex-direction:column;line-height:.82}
-.logo b{font-family:"Cond";font-size:27px;letter-spacing:.01em}
-.logo small{font-family:"Cond";font-size:11.5px;letter-spacing:.12em;display:flex;align-items:center;gap:6px}
-.logo small:after{content:"";height:2px;flex:1;background:currentColor;opacity:.8}
-.nl{display:flex;gap:26px;font-size:14.5px;color:var(--mute)}
-.nl a:hover,.nl a.on{color:var(--bone)}
-.nr{display:flex;align-items:center;gap:10px}
-.lang{display:flex;border-radius:999px;box-shadow:inset 0 0 0 1px var(--line);padding:3px}
-.lang button{font-size:12.5px;font-weight:600;padding:6px 10px;border-radius:999px;color:var(--mute)}
-.lang button[aria-pressed=true]{background:var(--bone);color:var(--ink)}
-.nav .btn{padding:11px 18px;font-size:14px}
+.nav{position:fixed;inset:0 0 auto;z-index:60;display:flex;justify-content:space-between;align-items:center;padding:18px 24px;color:#fff;transition:background .4s,color .4s}
+.nav.s{background:#ede3ddee;color:var(--red);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
+.logo{font-family:"Lexend Exa";font-weight:400;font-size:21px;letter-spacing:-.05em;line-height:1}
+.logo small{display:block;font-size:9.5px;letter-spacing:.25em;margin-top:2px}
+.nl{display:flex;gap:30px;font-size:15px;font-weight:500;text-transform:uppercase}
+.nl a{display:flex;align-items:center;gap:7px}
+.nl a svg{width:15px;height:15px}
+.nl a:after{content:"";position:absolute}
+.nl a:hover{opacity:.7}
+.nr{display:flex;align-items:center;gap:12px}
+.lang{display:flex;gap:2px;font-size:13px;font-weight:600}
+.lang button{padding:5px 7px;opacity:.55}
+.lang button[aria-pressed=true]{opacity:1;text-decoration:underline;text-underline-offset:4px}
+.bagb{position:relative;width:38px;height:38px;display:grid;place-items:center}
+.bagb svg{width:20px}
+.bagb b{position:absolute;top:0;right:-2px;min-width:18px;height:18px;border-radius:9px;background:#fff;color:var(--red);font-size:11px;display:none;place-items:center;padding:0 4px}
+.nav.s .bagb b{background:var(--red);color:#fff}
+.bagb b.on{display:grid}
 
-/* hero spotlight */
-.hero{height:100svh;min-height:620px;padding:0;overflow:hidden;cursor:none;touch-action:pan-y}
-.hero video,.hero .lit{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.hero .lit{background:radial-gradient(circle at 50% 50%,#0000,#120c1866)}
-.dark{position:absolute;inset:0;background:var(--ink);--x:50%;--y:45%;--r:180px;
- -webkit-mask:radial-gradient(circle var(--r) at var(--x) var(--y),#0000 0,#0000 55%,#000 100%);mask:radial-gradient(circle var(--r) at var(--x) var(--y),#0000 0,#0000 55%,#000 100%)}
-.dark:after{content:"";position:absolute;inset:0;opacity:.18;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
-.ghost{position:absolute;left:0;right:0;top:50%;transform:translateY(-58%);text-align:center;font-size:clamp(50px,17.5vw,250px);color:transparent;-webkit-text-stroke:1.5px #efe9df30;pointer-events:none;white-space:nowrap}
-.hin{position:absolute;inset:auto 0 0;padding:0 0 46px;pointer-events:none}
-.hin .wrap{display:flex;justify-content:space-between;align-items:end;gap:30px}
-.hin h1{font-size:clamp(30px,3.6vw,52px);max-width:15ch}
-.hin p{color:var(--mute);margin-top:12px;max-width:40ch}
-.hin .btn{pointer-events:auto}
-.hint{position:absolute;left:50%;top:calc(50% + clamp(60px,10vw,150px));transform:translateX(-50%);font-size:13px;color:var(--mute);display:flex;gap:8px;align-items:center;transition:opacity .6s;pointer-events:none}
-.hint i{width:8px;height:8px;border-radius:50%;background:var(--bb);box-shadow:0 0 12px var(--bb);animation:pul 1.6s infinite}
-@keyframes pul{50%{opacity:.3}}
-.torch{position:absolute;width:10px;height:10px;margin:-5px 0 0 -5px;border-radius:50%;background:var(--bb);box-shadow:0 0 20px 4px #f2e60088;pointer-events:none;left:var(--x);top:var(--y)}
+/* HERO */
+.hero{height:100svh;min-height:640px;background:var(--red-2);color:#fff;overflow:hidden}
+.hero:before{content:"";position:absolute;inset:0;opacity:.22;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");pointer-events:none;z-index:3}
+.hbg{position:absolute;inset:0 0 50% 0}
+.hbg .tint{position:absolute;inset:0}
+.hbg .tint img{object-position:center 30%}
+.mq{position:absolute;left:0;top:13%;display:flex;width:max-content;z-index:1;animation:mq 26s linear infinite}
+.mq span{font-family:"Lexend Exa";font-weight:300;font-size:clamp(110px,15vw,240px);letter-spacing:-.06em;line-height:1;color:var(--red);padding-right:.15em;-webkit-text-stroke:1px #ff4d4d}
+@keyframes mq{to{transform:translateX(-50%)}}
+.bign{position:absolute;bottom:-4%;left:50%;transform:translateX(-36%);font-family:"Lexend Exa";font-weight:300;font-size:clamp(160px,26vw,420px);letter-spacing:-.08em;line-height:.8;color:transparent;-webkit-text-stroke:2px #ff5a5a;z-index:1;pointer-events:none}
+.stack{position:absolute;z-index:2;left:50%;top:12%;width:min(300px,30vw);transform:translateX(-50%)}
+.stack .top{height:clamp(170px,22vh,230px);background:var(--red-3);display:grid;place-items:center}
+.typed{font-family:"Fragment Mono";font-size:clamp(18px,1.7vw,24px);letter-spacing:.04em}
+.typed:after{content:"`";animation:bl 1s steps(1) infinite}
+@keyframes bl{50%{opacity:0}}
+.stack .ph{height:clamp(220px,30vh,300px)}
+.stack .ph .tint{position:absolute;inset:0;opacity:0;transition:opacity .8s}
+.stack .ph .tint.on{opacity:1}
+.stack .ph{position:relative}
+.dots{display:flex;gap:6px;justify-content:center;margin-top:18px}
+.dots button{height:18px;width:28px;border-radius:9px;background:#ffffff44;transition:width .5s var(--e),background .3s;overflow:hidden;position:relative}
+.dots button.on{width:72px;background:#ffffff55}
+.dots button.on:after{content:"";position:absolute;inset:0;background:#ffd9d9;transform-origin:0;animation:fill 4.2s linear forwards}
+@keyframes fill{from{transform:scaleX(0)}}
+.buddy{position:absolute;left:4%;top:44%;width:clamp(90px,10vw,140px);z-index:2;color:#fff}
+.buddy .ey{transition:transform .15s}
+.play{position:absolute;left:4%;bottom:7%;z-index:4;width:52px;height:52px;background:#f3e6e3;color:var(--ink);display:grid;place-items:center;transition:transform .3s var(--e)}
+.play:hover{transform:scale(1.08)}
+.play svg{width:18px}
+.hcopy{position:absolute;right:24px;bottom:7%;z-index:4;max-width:330px;text-align:right;display:grid;gap:16px;justify-items:end}
+.hcopy p{font-size:15px;line-height:1.45}
+.hcopy b{font-family:"Lexend Exa";font-weight:400;font-size:clamp(22px,2vw,30px);letter-spacing:-.04em;text-transform:uppercase;line-height:1}
 
-/* next date */
-.next{padding:0;border-block:1px solid var(--line)}
-.next .wrap{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:40px;padding:28px 0}
-.next .tag{font-size:13px;color:var(--bb);font-weight:600;display:flex;align-items:center;gap:8px}
-.next .tag:before{content:"";width:8px;height:8px;border-radius:50%;background:var(--bb);animation:pul 1.6s infinite}
-.cd{display:flex;gap:22px;font-family:"Cond";font-size:44px;line-height:1}
-.cd span{display:flex;flex-direction:column;align-items:center}
-.cd small{font:500 11.5px "Inter";color:var(--mute);margin-top:6px}
+/* next strip */
+.next{background:var(--ink);color:#fff;overflow:hidden}
+.next .wrap{display:flex;justify-content:space-between;align-items:center;gap:30px;padding:18px 0;font-size:14.5px;text-transform:uppercase}
+.next .live{display:flex;align-items:center;gap:10px}
+.next .live:before{content:"";width:9px;height:9px;border-radius:50%;background:var(--red);animation:bl 1.2s steps(1) infinite}
+.cd{display:flex;gap:18px;font-family:"Fragment Mono"}
+
+/* section heads */
+.big{padding:120px 0 40px;display:flex;justify-content:space-between;align-items:center;gap:20px}
+.big h2{font-size:clamp(48px,8vw,128px);text-align:center;flex:1}
+.plus{font-size:44px;font-weight:300;line-height:1}
+.h2{font-size:clamp(40px,5vw,72px);margin-bottom:56px}
+.lead{font-size:clamp(17px,1.4vw,20px);color:var(--ink);max-width:40ch}
+
+/* residents staircase */
+.res{padding-bottom:110px}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;align-items:start}
+.pc{display:grid;gap:14px;cursor:pointer}
+.pc:nth-child(2){margin-top:52px}.pc:nth-child(3){margin-top:104px}.pc:nth-child(4){margin-top:156px}
+.pc .tint{aspect-ratio:4/5}
+.pc .tint img{transition:transform 1s var(--e)}
+.pc:hover .tint img{transform:scale(1.06)}
+.pc h3{font-family:"Lexend Exa";font-weight:400;font-size:22px;letter-spacing:-.04em;text-transform:uppercase;line-height:1.1}
+.pc p{font-size:16px;line-height:1.35}
+.pc p small{display:block;font-size:14px;opacity:.85}
+.pc .room{display:inline-block;font-size:12px;text-transform:uppercase;padding:4px 8px;margin-top:6px;background:var(--red);color:#fff}
+.pc .room.od{background:var(--blue)}
+.resf{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-top:70px}
+.resf p{color:var(--ink);max-width:36ch;font-size:18px}
+
+/* split rooms */
+.split{height:min(80vh,720px);min-height:480px;position:relative;overflow:hidden;color:#fff;touch-action:pan-y;user-select:none}
+.split .side{position:absolute;inset:0}
+.split .side.b{clip-path:var(--cp)}
+.split .tint{position:absolute;inset:0}
+.split h2{position:absolute;left:4%;top:9%;font-size:clamp(38px,5vw,72px);z-index:3;max-width:9em;pointer-events:none}
+.split .rl{position:absolute;z-index:3;bottom:9%;font-size:14px;text-transform:uppercase;pointer-events:none}
+.split .rl b{display:block;font-family:"Lexend Exa";font-weight:400;font-size:clamp(22px,2.4vw,34px);letter-spacing:-.04em}
+.split .rl.l{left:4%}.split .rl.r{right:4%;text-align:right}
+.split .knob{position:absolute;top:50%;z-index:4;width:64px;height:64px;margin:-32px 0 0 -32px;border-radius:50%;background:#fff;color:var(--ink);display:grid;place-items:center;cursor:ew-resize;box-shadow:0 10px 30px #0004;left:var(--k)}
+.split .knob svg{width:26px}
+.split .cta{position:absolute;right:4%;top:9%;z-index:4;display:grid;gap:14px;justify-items:end;max-width:300px;text-align:right}
+.split .cta p{font-size:16px}
 
 /* events */
-.ticket{display:grid;grid-template-columns:1.05fr 1fr;border-radius:18px;overflow:hidden;background:var(--ink-2);box-shadow:var(--sh)}
-.ticket .fl{position:relative;min-height:520px;background:#000}
-.ticket .fl img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.9}
-.ticket .fl .date{position:absolute;left:28px;bottom:24px;font-size:clamp(90px,11vw,160px);color:var(--bone);mix-blend-mode:difference}
-.ticket .tx{padding:44px;display:flex;flex-direction:column;gap:22px;position:relative}
-.ticket .tx:before{content:"";position:absolute;left:-1px;top:20px;bottom:20px;border-left:2px dashed var(--line)}
-.rooms{display:flex;gap:6px;padding:5px;border-radius:999px;background:var(--ink);width:max-content}
-.rooms button{padding:10px 18px;border-radius:999px;font-size:14px;font-weight:600;color:var(--mute);transition:background .3s,color .3s}
-.rooms button[aria-selected=true][data-r=bb]{background:var(--bb);color:var(--ink)}
-.rooms button[aria-selected=true][data-r=od]{background:var(--od);color:var(--ink)}
-.room h3{font-size:44px;line-height:.95}
-.room .g{font-size:14px;color:var(--mute);margin-top:6px}
-.room ul{list-style:none;margin-top:18px;display:grid;gap:10px}
-.room li{display:flex;justify-content:space-between;gap:12px;padding-bottom:10px;border-bottom:1px solid var(--line);font-size:15.5px}
-.room li span{color:var(--mute);font-size:14px}
-.room{animation:fi .45s var(--e)}
-@keyframes fi{from{opacity:0;transform:translateY(8px)}}
-.tinfo{display:grid;grid-template-columns:1fr 1fr;gap:14px;font-size:14.5px;margin-top:auto}
-.tinfo div{padding:14px;border-radius:12px;background:var(--ink)}
-.tinfo small{display:block;color:var(--mute);font-size:12.5px}
-.tact{display:flex;flex-wrap:wrap;gap:10px}
-.upc{display:flex;gap:14px;margin-top:22px;overflow-x:auto;scrollbar-width:none}
-.upc .u{flex:1;min-width:230px;border-radius:18px;padding:22px;box-shadow:inset 0 0 0 1px var(--line);display:flex;justify-content:space-between;align-items:center;gap:12px}
-.upc .u b{font-family:"Cond";font-size:30px}
-.upc .u span{color:var(--mute);font-size:14px}
-.ics{font-size:13px;padding:8px 12px;border-radius:999px;box-shadow:inset 0 0 0 1px var(--line)}
+.evs{padding:110px 0 100px;border-bottom:1px solid var(--red)}
+.eg{display:grid;grid-template-columns:repeat(3,1fr);gap:24px 24px}
+.ec{display:grid;gap:14px;text-align:left}
+.ec .tint{aspect-ratio:4/5;position:relative}
+.ec .tint img{transition:transform 1s var(--e)}
+.ec:hover .tint img{transform:scale(1.05)}
+.ec .dt{position:absolute;z-index:2;left:16px;top:16px;background:var(--cream);color:var(--red);padding:5px 12px;font-size:15px}
+.ec.nx .dt{background:#fff;animation:pul 1.6s infinite}
+@keyframes pul{50%{background:var(--t1)}}
+.ec h3{font-family:"Lexend Exa";font-weight:300;font-size:clamp(20px,1.9vw,26px);letter-spacing:-.04em;text-transform:uppercase;line-height:1.15}
+.ec p{font-size:16px}
+.filter{display:flex;gap:8px;margin:-24px 0 40px;flex-wrap:wrap}
+.filter button{padding:8px 16px;border:1px solid var(--red);font-size:14px;text-transform:uppercase}
+.filter button[aria-pressed=true]{background:var(--red);color:#fff}
 
-/* archive */
-.arch{background:var(--bone);color:var(--ink);border-radius:28px 28px 0 0}
-.arch .lede{color:#5a4f63}
-.yr{display:grid;grid-template-columns:320px 1fr;gap:50px}
-.fly{position:sticky;top:100px;align-self:start;aspect-ratio:3/4;border-radius:14px;overflow:hidden;background:#000;box-shadow:var(--sh)}
-.fly img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .5s,transform .8s var(--e)}
-.ev{list-style:none}
-.ev li{border-top:1.5px solid var(--ink)}
-.ev li:last-child{border-bottom:1.5px solid var(--ink)}
-.ev button{width:100%;display:grid;grid-template-columns:150px 1fr auto;gap:24px;align-items:center;padding:22px 0;text-align:left}
-.ev .dt{font-family:"Cond";font-size:44px;line-height:1}
-.ev .nm b{display:block;font-weight:600;font-size:18px}
-.ev .nm span{font-size:14.5px;color:#5a4f63}
-.ev .pl{width:38px;height:38px;border-radius:50%;box-shadow:inset 0 0 0 1.5px var(--ink);display:grid;place-items:center;transition:transform .4s var(--e),background .3s}
-.ev li.on .pl{transform:rotate(45deg);background:var(--ink);color:var(--bone)}
-.ev .ex{display:grid;grid-template-rows:0fr;transition:grid-template-rows .5s var(--e)}
-.ev li.on .ex{grid-template-rows:1fr}
-.ev .ex>div{overflow:hidden}
-.ev .ex p{padding:0 0 24px 174px;font-size:15.5px;color:#3d3346;display:grid;gap:6px}
-.ev .ex p b{font-weight:600;color:var(--ink)}
-.film{margin-top:90px;display:grid;grid-template-columns:1.4fr 1fr;gap:16px}
-.film .vid{position:relative;border-radius:18px;overflow:hidden;aspect-ratio:16/10;background:#000}
-.film .vid video{width:100%;height:100%;object-fit:cover}
-.film .vid .pp{position:absolute;left:20px;bottom:20px;display:flex;align-items:center;gap:10px;padding:10px 16px 10px 10px;border-radius:999px;background:#120c18b3;color:var(--bone);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);font-size:14px;font-weight:600}
-.film .vid .pp i{width:30px;height:30px;border-radius:50%;background:var(--bb);display:grid;place-items:center;color:var(--ink);font-style:normal}
-.gal{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.gal button{border-radius:18px;overflow:hidden;position:relative}
-.gal img{width:100%;height:100%;object-fit:cover;aspect-ratio:1;transition:transform .8s var(--e)}
-.gal button:hover img{transform:scale(1.05)}
-.gal .more{position:absolute;inset:0;display:grid;place-items:center;background:#120c18a6;color:var(--bone);font-family:"Cond";font-size:44px}
-.lb{position:fixed;inset:0;z-index:90;background:#120c18f2;display:none;place-items:center;padding:24px}
-.lb.on{display:grid}
-.lb img{max-height:82vh;border-radius:12px;animation:fi .4s var(--e)}
-.lb .x,.lb .pv,.lb .nx{position:absolute;width:48px;height:48px;border-radius:50%;background:var(--ink-3);display:grid;place-items:center;font-size:20px}
-.lb .x{top:20px;right:20px}.lb .pv{left:20px;top:50%}.lb .nx{right:20px;top:50%}
-.lb .ct{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);font-size:13px;color:var(--mute)}
+/* polaroids */
+.pol{padding:110px 0 120px;overflow:hidden}
+.pol h2{font-size:clamp(48px,8vw,120px);margin-bottom:60px}
+.pt{display:flex;gap:34px;width:max-content;animation:mq 60s linear infinite;padding:20px 0}
+.pol:hover .pt{animation-play-state:paused}
+.pd{width:260px;background:#fff;padding:14px 14px 20px;box-shadow:0 14px 30px -16px #0005;position:relative;color:var(--ink);text-align:center;transition:transform .5s var(--e)}
+.pd:nth-child(4n+1){transform:rotate(-5deg)}.pd:nth-child(4n+2){transform:rotate(3deg) translateY(10px)}.pd:nth-child(4n+3){transform:rotate(-1deg)}.pd:nth-child(4n){transform:rotate(4deg) translateY(-6px)}
+.pd:hover{transform:rotate(0) scale(1.06);z-index:2}
+.pd:before{content:"";position:absolute;left:50%;top:-12px;width:80px;height:24px;transform:translateX(-50%) rotate(-3deg);background:var(--tp);opacity:.85}
+.pd img{aspect-ratio:1;object-fit:cover;width:100%}
+.pd b{display:block;font-weight:500;font-size:20px;margin-top:12px}
+.pd small{font-size:13px}
 
-/* space */
-.sp .g{display:grid;grid-template-columns:1fr 1fr;gap:60px}
-.uses{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:40px}
-.use{border-radius:18px;padding:22px;background:var(--ink-2);display:flex;flex-direction:column;gap:30px;transition:background .3s,transform .3s var(--e);text-align:left}
-.use svg{width:30px;height:30px;color:var(--bb)}
-.use b{font-weight:600;font-size:16px}
-.use[aria-pressed=true]{background:var(--bb);color:var(--ink)}
-.use[aria-pressed=true] svg{color:var(--ink)}
-.cond{margin-top:40px;display:grid;gap:0}
-.cond div{display:flex;gap:18px;padding:16px 0;border-top:1px solid var(--line);font-size:15.5px}
-.cond div b{min-width:120px;font-weight:600}
-.cond div span{color:var(--mute)}
-form.f{background:var(--ink-2);border-radius:22px;padding:34px;display:grid;grid-template-columns:1fr 1fr;gap:16px;align-content:start;box-shadow:var(--sh)}
-form.f h3{grid-column:1/-1;font-size:36px}
-form.f .full{grid-column:1/-1}
-label{display:grid;gap:7px;font-size:13.5px;color:var(--mute);font-weight:500}
-input,select,textarea{background:var(--ink);border-radius:10px;padding:14px;font-size:16px;color:var(--bone);box-shadow:inset 0 0 0 1px var(--line);transition:box-shadow .2s}
-input:focus,select:focus,textarea:focus{outline:0;box-shadow:inset 0 0 0 1.5px var(--od)}
-[aria-invalid=true]{box-shadow:inset 0 0 0 1.5px var(--err)}
-.chosen{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:6px;font-size:13px}
-.chosen span{padding:6px 12px;border-radius:999px;background:var(--bb);color:var(--ink);font-weight:600}
-.chosen em{color:var(--mute);font-style:normal}
-.msg{grid-column:1/-1;font-size:14.5px;padding:14px;border-radius:12px;display:none}
+/* video circle */
+.vc{height:min(90vh,800px);position:relative;overflow:hidden;display:grid;place-items:center}
+.vc video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(1.6) contrast(1.15)}
+.ring{position:relative;z-index:2;width:min(420px,78vw);aspect-ratio:1;border:2.5px solid #fff;border-radius:50%;display:grid;place-items:center;transition:transform .2s}
+.ring svg.rt{position:absolute;inset:-56px;width:calc(100% + 112px);animation:spin 22s linear infinite;color:#fff}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* forms & panels */
+.pane{padding:110px 0;border-top:1px solid var(--red)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:70px}
+.uses{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:36px;border-top:1px solid var(--red);border-left:1px solid var(--red)}
+.use{border-right:1px solid var(--red);border-bottom:1px solid var(--red);padding:18px;display:grid;gap:26px;text-align:left;transition:background .25s,color .25s;font-weight:500;text-transform:uppercase;font-size:14px}
+.use svg{width:28px;height:28px}
+.use[aria-pressed=true]{background:var(--red);color:#fff}
+.cond{margin-top:36px}
+.cond div{display:grid;grid-template-columns:130px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid #ff000255;font-size:16px}
+.cond b{font-weight:500;text-transform:uppercase;font-size:14px}
+.cond span{color:var(--ink)}
+form.f{background:var(--paper);padding:30px;display:grid;grid-template-columns:1fr 1fr;gap:16px;align-content:start;border:1px solid var(--red)}
+form.f h3{grid-column:1/-1;font-family:"Lexend Exa";font-weight:300;font-size:34px;letter-spacing:-.04em;text-transform:uppercase}
+.full{grid-column:1/-1}
+label{display:grid;gap:6px;font-size:13px;text-transform:uppercase;font-weight:500}
+input,select,textarea{background:transparent;border-bottom:1px solid var(--red);padding:10px 0;font-size:17px;color:var(--ink);border-radius:0;transition:border-color .2s}
+textarea{border:1px solid var(--red);padding:10px}
+input:focus,select:focus,textarea:focus{outline:0;border-color:var(--ink)}
+[aria-invalid=true]{border-color:var(--ink);background:#ff00020f}
+.chosen{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:6px;font-size:13px;text-transform:uppercase}
+.chosen span{padding:5px 10px;background:var(--red);color:#fff}
+.chosen em{font-style:normal;color:var(--ink);opacity:.7;text-transform:none}
+.msg{grid-column:1/-1;display:none;padding:12px;font-size:15px}
 .msg.on{display:block}
-.msg.ok{background:#5be3a01f;color:var(--ok)}
-.msg.er{background:#ff5c6c1f;color:var(--err)}
+.msg.ok{background:var(--ink);color:#fff}
+.msg.er{background:var(--red);color:#fff}
+.sendb{grid-column:1/-1;justify-self:start}
 
 /* socis */
-.soc{background:linear-gradient(180deg,var(--ink),#1a0f2b 60%,var(--ink))}
-.soc .g{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
-.perks{list-style:none;margin:36px 0;display:grid;gap:14px}
-.perks li{display:flex;gap:14px;align-items:flex-start}
-.perks li i{flex:none;width:26px;height:26px;border-radius:50%;background:var(--od);display:grid;place-items:center;color:var(--ink);font-style:normal;font-size:13px;font-weight:700;margin-top:2px}
-.steps{display:flex;gap:6px;margin-bottom:22px}
-.steps i{flex:1;height:4px;border-radius:4px;background:var(--line);transition:background .4s}
-.steps i.on{background:var(--bb)}
+.soc{background:var(--red);color:#fff;padding:110px 0}
+.soc .lead{color:#fff}
+.soc form.f{background:var(--red-2);border-color:#ffffff88}
+.soc label{color:#fff}
+.soc input,.soc select{color:#fff;border-color:#ffffffaa}
+.soc input::placeholder{color:#ffffff88}
+.soc input[type=date]{color-scheme:dark}
+.perks{list-style:none;margin:30px 0;display:grid}
+.perks li{display:grid;grid-template-columns:44px 1fr;gap:10px;padding:14px 0;border-top:1px solid #ffffff55;font-size:17px}
+.perks li i{font-family:"Fragment Mono";font-style:normal;opacity:.8}
+.steps{grid-column:1/-1;display:flex;gap:6px}
+.steps i{flex:1;height:3px;background:#ffffff44;transition:background .4s}
+.steps i.on{background:#fff}
 .stp{display:none;grid-column:1/-1;grid-template-columns:1fr 1fr;gap:16px}
-.stp.on{display:grid;animation:fi .4s var(--e)}
-.plans{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.plan{border-radius:14px;padding:18px;box-shadow:inset 0 0 0 1px var(--line);text-align:left;display:grid;gap:4px}
-.plan b{font-family:"Cond";font-size:28px}
-.plan span{font-size:13.5px;color:var(--mute)}
-.plan[aria-pressed=true]{box-shadow:inset 0 0 0 2px var(--bb);background:#f2e6000f}
-.chk{display:flex;gap:10px;align-items:flex-start;font-size:13.5px;color:var(--mute)}
-.chk input{width:20px;height:20px;padding:0;accent-color:var(--bb);flex:none;margin-top:2px}
+.stp.on{display:grid;animation:fi .45s var(--e)}
+@keyframes fi{from{opacity:0;transform:translateY(8px)}}
+.plans{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.plan{border:1px solid #ffffff88;padding:16px;text-align:left;display:grid;gap:4px}
+.plan b{font-family:"Lexend Exa";font-weight:400;font-size:20px;letter-spacing:-.04em;text-transform:uppercase}
+.plan span{font-size:14px;opacity:.85}
+.plan[aria-pressed=true]{background:#fff;color:var(--red)}
+.chk{display:flex!important;gap:10px;align-items:flex-start;text-transform:none;font-size:14.5px;font-weight:400}
+.chk input{width:20px;height:20px;padding:0;accent-color:#fff;flex:none;margin-top:2px}
 .fbt{grid-column:1/-1;display:flex;justify-content:space-between;gap:10px}
-/* card */
-.cardwrap{perspective:1200px;display:grid;place-items:center}
-.card{width:min(380px,100%);aspect-ratio:1.586;border-radius:20px;position:relative;transform-style:preserve-3d;transition:transform .9s var(--e)}
+.cardw{perspective:1200px;margin-top:34px;display:grid;justify-items:start;gap:14px}
+.card{width:min(380px,100%);aspect-ratio:1.586;position:relative;transform-style:preserve-3d;transition:transform .9s var(--e)}
 .card.flip{transform:rotateY(180deg)}
-.card .fc{position:absolute;inset:0;border-radius:20px;backface-visibility:hidden;-webkit-backface-visibility:hidden;overflow:hidden;padding:22px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 40px 80px -30px #000,inset 0 0 0 1px #ffffff1f}
-.card .front{background:radial-gradient(120% 140% at 0 0,#8f6bff 0,#3b1f73 45%,#120c18 100%)}
-.card .front:after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,#0000 30%,#ffffff26 45%,#0000 60%);transform:translateX(var(--gx,-60%));transition:transform .2s}
-.card .back{background:var(--bone);color:var(--ink);transform:rotateY(180deg);flex-direction:row;align-items:center;gap:18px}
-.card .back canvas{width:44%;aspect-ratio:1;image-rendering:pixelated;background:#fff;border-radius:8px;padding:6px}
-.card .row{display:flex;justify-content:space-between;align-items:end}
-.card .nm{font-family:"Cond";font-size:30px;line-height:1}
-.card small{font-size:11.5px;opacity:.75;display:block}
-.card .chip{width:42px;height:32px;border-radius:7px;background:linear-gradient(135deg,#f2e600,#b8a900)}
-.flipb{margin-top:20px;font-size:14px;color:var(--mute);text-decoration:underline;text-underline-offset:4px}
+.fc{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;padding:20px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;box-shadow:0 30px 60px -30px #0008}
+.front{background:var(--cream);color:var(--red)}
+.front:before{content:"AMAGATALL";position:absolute;right:-20px;bottom:-26px;font-family:"Lexend Exa";font-weight:300;font-size:92px;letter-spacing:-.07em;color:transparent;-webkit-text-stroke:1px #ff000244}
+.front:after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,#0000 35%,#ffffff99 48%,#0000 60%);transform:translateX(var(--gx,-70%));transition:transform .2s;pointer-events:none}
+.back{background:#fff;color:var(--ink);transform:rotateY(180deg);flex-direction:row;align-items:center;gap:18px}
+.back canvas{width:44%;aspect-ratio:1;image-rendering:pixelated}
+.fc .row{display:flex;justify-content:space-between;align-items:end;position:relative;z-index:1}
+.fc small{display:block;font-size:11px;text-transform:uppercase;opacity:.75}
+.fc .nm{font-family:"Lexend Exa";font-size:24px;letter-spacing:-.05em;line-height:1}
+.flipb{font-size:14px;text-transform:uppercase;text-decoration:underline;text-underline-offset:4px}
 
-/* app demo */
-.app .g{display:grid;grid-template-columns:1fr 400px;gap:70px;align-items:center}
-.mods{list-style:none;display:grid;gap:8px;margin-top:36px}
-.mods button{width:100%;text-align:left;display:grid;grid-template-columns:44px 1fr;gap:16px;align-items:center;padding:16px;border-radius:16px;transition:background .3s}
-.mods button svg{width:44px;height:44px;padding:11px;border-radius:12px;background:var(--ink-2);color:var(--mute);transition:.3s}
-.mods button b{display:block;font-weight:600}
-.mods button span{font-size:14px;color:var(--mute)}
-.mods button[aria-selected=true]{background:var(--ink-2)}
-.mods button[aria-selected=true] svg{background:var(--bb);color:var(--ink)}
-.phone{width:min(380px,100%);margin-inline:auto;aspect-ratio:9/19;border-radius:52px;padding:12px;background:#0a070d;box-shadow:0 60px 120px -50px #8f6bff66,inset 0 0 0 2px #3a2f45}
-.scr{width:100%;height:100%;border-radius:42px;background:var(--ink-2);overflow:hidden;position:relative;display:flex;flex-direction:column}
-.sbar{display:flex;justify-content:space-between;padding:16px 26px 6px;font-size:12.5px;font-weight:600}
-.isl{position:absolute;top:10px;left:50%;transform:translateX(-50%);width:100px;height:28px;border-radius:20px;background:#000}
-.ah{padding:14px 20px 10px;display:flex;justify-content:space-between;align-items:center}
-.ah b{font-family:"Cond";font-size:28px}
-.av{flex:1;overflow-y:auto;padding:4px 16px 16px;scrollbar-width:none}
+/* app */
+.app{padding:110px 0;background:var(--cream)}
+.app .two{grid-template-columns:1fr 400px;align-items:center}
+.mods{list-style:none;margin-top:36px;border-top:1px solid var(--red)}
+.mods button{width:100%;display:grid;grid-template-columns:52px 1fr auto;gap:16px;align-items:center;padding:18px 0;border-bottom:1px solid var(--red);text-align:left;transition:padding .3s var(--e),background .3s,color .3s}
+.mods button .n{font-family:"Fragment Mono";font-size:14px}
+.mods button b{display:block;font-family:"Lexend Exa";font-weight:400;font-size:19px;letter-spacing:-.04em;text-transform:uppercase}
+.mods button span{font-size:14.5px;color:var(--ink)}
+.mods button:after{content:"↳";font-size:20px}
+.mods button[aria-selected=true]{background:var(--red);color:#fff;padding-inline:14px}
+.mods button[aria-selected=true] span{color:#fff}
+.phone{width:min(370px,100%);margin-inline:auto;aspect-ratio:9/19;border-radius:52px;padding:11px;background:var(--ink);box-shadow:0 50px 90px -40px #b8000188}
+.scr{width:100%;height:100%;border-radius:42px;background:var(--paper);overflow:hidden;position:relative;display:flex;flex-direction:column;color:var(--ink)}
+.isl{position:absolute;top:10px;left:50%;transform:translateX(-50%);width:98px;height:28px;border-radius:20px;background:#000;z-index:6}
+.sbar{display:flex;justify-content:space-between;padding:15px 26px 4px;font-size:12.5px;font-weight:600}
+.ah{padding:12px 18px 8px;display:flex;justify-content:space-between;align-items:center;color:var(--red)}
+.ah b{font-family:"Lexend Exa";font-weight:400;font-size:24px;letter-spacing:-.05em;text-transform:uppercase}
+.av{flex:1;overflow-y:auto;padding:4px 14px 14px;scrollbar-width:none}
 .av::-webkit-scrollbar{display:none}
 .vw{display:none;animation:fi .45s var(--e)}
 .vw.on{display:block}
-.tabbar{display:flex;justify-content:space-around;padding:10px 8px 22px;border-top:1px solid var(--line);background:var(--ink)}
-.tabbar button{display:grid;place-items:center;gap:3px;font-size:10.5px;color:var(--mute);padding:4px 8px}
-.tabbar button svg{width:22px;height:22px}
-.tabbar button[aria-selected=true]{color:var(--bb)}
-.mcard{background:var(--ink-3);border-radius:16px;padding:14px;margin-bottom:10px;font-size:13.5px}
-.mcard h4{font-weight:600;font-size:14.5px;margin-bottom:6px}
-.mini{width:100%;aspect-ratio:1.586;border-radius:14px;background:radial-gradient(120% 140% at 0 0,#8f6bff,#3b1f73 45%,#120c18);padding:14px;display:flex;flex-direction:column;justify-content:space-between;margin-bottom:10px}
-.mini .q{align-self:end;width:72px;height:72px;background:#fff;border-radius:6px;padding:4px}
+.tabbar{display:flex;justify-content:space-around;padding:9px 6px 20px;border-top:1px solid #ff000233;background:#fff}
+.tabbar button{display:grid;place-items:center;gap:2px;font-size:10px;color:#20202088;padding:4px 6px}
+.tabbar button svg{width:21px;height:21px}
+.tabbar button[aria-selected=true]{color:var(--red)}
+.mc{background:#fff;padding:12px;margin-bottom:8px;font-size:13px;border-radius:14px}
+.mc h4{font-weight:600;font-size:14px;margin-bottom:6px}
+.mini{aspect-ratio:1.586;background:var(--red);color:#fff;padding:14px;display:flex;flex-direction:column;justify-content:space-between;margin-bottom:8px;border-radius:14px}
+.mini .q{align-self:end;width:72px;height:72px;background:#fff;padding:4px;border-radius:6px}
 .mini .q canvas{width:100%;height:100%;image-rendering:pixelated}
-.srch{display:flex;gap:8px;margin-bottom:10px}
-.srch input{flex:1;padding:11px 12px;font-size:14px;border-radius:12px;background:var(--ink)}
-.scan{width:44px;border-radius:12px;background:var(--bb);color:var(--ink);display:grid;place-items:center}
-.scan svg{width:20px;height:20px}
-.live{display:flex;justify-content:space-between;align-items:center;padding:12px 14px;border-radius:14px;background:#5be3a014;color:var(--ok);font-size:13px;font-weight:600;margin-bottom:10px}
-.live b{font-family:"Cond";font-size:30px;color:var(--bone)}
-.prs{list-style:none;display:grid;gap:6px}
-.prs li{display:flex;align-items:center;gap:10px;padding:10px;border-radius:12px;background:var(--ink-3);font-size:13.5px}
-.prs li .ini{width:32px;height:32px;border-radius:50%;display:grid;place-items:center;background:var(--line);font-weight:600;font-size:12px;flex:none}
-.prs li div{flex:1;min-width:0}
-.prs li small{display:block;color:var(--mute);font-size:11.5px}
-.prs li button{font-size:12px;font-weight:600;padding:7px 12px;border-radius:999px;background:var(--bone);color:var(--ink)}
-.prs li.in button{background:var(--ok)}
-.prs li.no small{color:var(--err)}
-.scanv{position:absolute;inset:0;background:#000;z-index:5;display:none;place-items:center;flex-direction:column}
-.scanv.on{display:grid}
-.scanv .fr{width:200px;height:200px;border-radius:24px;box-shadow:0 0 0 2000px #000a,inset 0 0 0 3px var(--bb);position:relative;overflow:hidden}
-.scanv .fr:after{content:"";position:absolute;left:0;right:0;height:2px;background:var(--bb);box-shadow:0 0 14px var(--bb);animation:scn 1.4s ease-in-out infinite alternate}
-@keyframes scn{from{top:8%}to{top:92%}}
-.scanv p{position:absolute;bottom:80px;font-size:13px;color:var(--mute)}
-.chkl{list-style:none;display:grid;gap:6px}
-.chkl label{display:flex;flex-direction:row;align-items:center;gap:10px;font-size:13.5px;color:var(--bone);padding:10px;border-radius:12px;background:var(--ink-3)}
-.chkl input{width:18px;height:18px;padding:0;accent-color:var(--bb)}
-.chkl input:checked+span{text-decoration:line-through;color:var(--mute)}
 .lup{display:grid;gap:4px;font-size:13px}
 .lup div{display:flex;justify-content:space-between}
-.lup span{color:var(--mute)}
+.lup span{color:#20202099}
+.srch{display:flex;gap:8px;margin-bottom:8px}
+.srch input{flex:1;padding:10px 12px;font-size:14px;background:#fff;border:0;border-radius:12px}
+.scan{width:44px;background:var(--red);color:#fff;display:grid;place-items:center;border-radius:12px}
+.scan svg{width:20px}
+.live{display:flex;justify-content:space-between;align-items:center;padding:10px 12px;background:var(--ink);color:#fff;font-size:12.5px;margin-bottom:8px;border-radius:12px}
+.live b{font-family:"Lexend Exa";font-size:24px}
+.prs{list-style:none;display:grid;gap:6px}
+.prs li{display:flex;align-items:center;gap:10px;padding:9px;background:#fff;font-size:13.5px;border-radius:12px}
+.prs .ini{width:32px;height:32px;border-radius:50%;display:grid;place-items:center;background:var(--cream);color:var(--red);font-weight:600;font-size:12px;flex:none}
+.prs li div{flex:1;min-width:0}
+.prs small{display:block;color:#20202088;font-size:11.5px}
+.prs li button{font-size:12px;font-weight:600;padding:7px 12px;background:var(--ink);color:#fff;border-radius:999px}
+.prs li.in button{background:#1a9b5c}
+.prs li.no small{color:var(--red)}
+.scanv{position:absolute;inset:0;background:#000;z-index:5;display:none;place-items:center}
+.scanv.on{display:grid}
+.scanv .fr{width:200px;height:200px;border-radius:22px;box-shadow:inset 0 0 0 3px var(--red);position:relative;overflow:hidden}
+.scanv .fr:after{content:"";position:absolute;left:0;right:0;height:2px;background:var(--red);box-shadow:0 0 14px var(--red);animation:scn 1.4s ease-in-out infinite alternate}
+@keyframes scn{from{top:8%}to{top:92%}}
+.scanv p{position:absolute;bottom:80px;font-size:13px;color:#fff}
+.chkl{list-style:none;display:grid;gap:6px}
+.chkl label{display:flex;flex-direction:row;align-items:center;gap:10px;font-size:13.5px;text-transform:none;font-weight:400;color:var(--ink);padding:10px;background:#fff;border-radius:12px}
+.chkl input{width:18px;height:18px;padding:0;accent-color:var(--red);border:0}
+.chkl input:checked+span{text-decoration:line-through;opacity:.5}
 .bars{display:flex;align-items:end;gap:6px;height:110px;margin:10px 0}
-.bars div{flex:1;display:flex;flex-direction:column;justify-content:end;gap:2px;height:100%}
-.bars i{display:block;border-radius:4px 4px 2px 2px;transform-origin:bottom;animation:gr .9s var(--e) both}
-.bars i.a{background:var(--bb)}.bars i.b{background:var(--od)}
+.bars>div{flex:1;display:flex;flex-direction:column;justify-content:end;gap:2px;height:100%}
+.bars i{display:block;transform-origin:bottom;animation:gr .9s var(--e) both}
+.bars i.a{background:var(--red)}.bars i.b{background:var(--ink)}
 @keyframes gr{from{transform:scaleY(0)}}
-.bars small{font-size:10px;color:var(--mute);text-align:center}
-.kp{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px}
-.kp div{background:var(--ink-3);border-radius:14px;padding:12px}
-.kp small{display:block;font-size:11.5px;color:var(--mute)}
-.kp b{font-family:"Cond";font-size:26px}
-.xl{width:100%;padding:12px;border-radius:12px;background:var(--ok);color:var(--ink);font-weight:600;font-size:13.5px}
+.bars small{font-size:10px;text-align:center;color:#20202088}
+.kp{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px}
+.kp div{background:#fff;padding:12px;border-radius:14px}
+.kp small{display:block;font-size:11px;color:#20202088}
+.kp b{font-family:"Lexend Exa";font-size:20px;letter-spacing:-.05em}
+.xl{width:100%;padding:12px;background:var(--red);color:#fff;font-weight:600;font-size:13.5px;border-radius:12px}
 .post{display:flex;gap:10px}
-.post .ini{width:30px;height:30px;border-radius:50%;background:var(--od);display:grid;place-items:center;font-size:12px;font-weight:600;color:var(--ink);flex:none}
-.post p{font-size:13px}
-.post small{color:var(--mute);font-size:11.5px}
-.dnote{font-size:12.5px;color:var(--mute);text-align:center;margin-top:16px}
+.post .ini{width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;display:grid;place-items:center;font-size:12px;font-weight:600;flex:none}
+.post small{color:#20202088;font-size:11.5px}
+.dnote{font-size:13px;text-align:center;margin-top:16px;color:var(--ink);opacity:.7}
 
 /* shop */
-.shop .g{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.prod{border-radius:18px;background:var(--ink-2);overflow:hidden;display:flex;flex-direction:column}
-.prod .ph{aspect-ratio:1;display:grid;place-items:center;position:relative}
-.prod .ph svg{width:70%}
-.prod .bd{padding:18px;display:flex;flex-direction:column;gap:6px;flex:1}
-.prod h3{font-weight:600;font-size:16px}
-.prod p{font-size:13.5px;color:var(--mute)}
-.prod .rw{display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:10px}
-.prod .pr{font-family:"Cond";font-size:26px}
+.shop{padding:110px 0;border-top:1px solid var(--red)}
+.sg{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.prod{display:grid;gap:12px;align-content:start}
+.prod .ph{aspect-ratio:4/5;display:grid;place-items:center;position:relative;overflow:hidden}
+.prod .ph svg{width:72%;transition:transform .8s var(--e)}
+.prod:hover .ph svg{transform:scale(1.06) rotate(-2deg)}
+.prod .tg{position:absolute;left:14px;top:14px;background:var(--cream);padding:4px 10px;font-size:13px}
+.prod h3{font-family:"Lexend Exa";font-weight:300;font-size:20px;letter-spacing:-.04em;text-transform:uppercase;line-height:1.15}
+.prod p{font-size:14.5px;color:var(--ink)}
+.prod .rw{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.prod .pr{font-family:"Lexend Exa";font-size:22px;letter-spacing:-.05em}
 .sz{display:flex;gap:4px}
-.sz button{width:30px;height:30px;border-radius:8px;font-size:12px;font-weight:600;box-shadow:inset 0 0 0 1px var(--line)}
-.sz button[aria-pressed=true]{background:var(--bone);color:var(--ink)}
-.add{padding:9px 16px;border-radius:999px;background:var(--bb);color:var(--ink);font-weight:600;font-size:13.5px;transition:transform .2s}
+.sz button{width:32px;height:30px;font-size:12px;font-weight:600;border:1px solid var(--red)}
+.sz button[aria-pressed=true]{background:var(--red);color:#fff}
+.add{padding:8px 14px;background:var(--red);color:#fff;font-size:13px;text-transform:uppercase;font-weight:500;transition:transform .2s}
 .add:active{transform:scale(.94)}
-.note{font-size:13px;color:var(--mute);margin-top:18px}
-.cola{margin-top:80px;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
-.bagb{position:relative;width:42px;height:42px;border-radius:50%;box-shadow:inset 0 0 0 1px var(--line);display:grid;place-items:center}
-.bagb svg{width:19px;height:19px}
-.bagb b{position:absolute;top:-4px;right:-4px;min-width:19px;height:19px;border-radius:10px;background:var(--bb);color:var(--ink);font-size:11px;display:none;place-items:center;padding:0 5px}
-.bagb b.on{display:grid}
-.bag{position:fixed;z-index:70;right:0;top:0;bottom:0;width:min(400px,100%);background:var(--ink-2);transform:translateX(105%);transition:transform .45s var(--e);display:flex;flex-direction:column;padding:24px}
+.note{font-size:13.5px;color:var(--ink);opacity:.75;margin-top:22px}
+.cola{margin-top:100px}
+
+/* statement + footer */
+.stmt{padding:120px 0 40px}
+.stmt .top{display:flex;justify-content:space-between;align-items:center;gap:30px}
+.stmt h2{font-size:clamp(36px,5vw,72px)}
+.stmt .c{font-family:"Lexend Exa";font-weight:300;font-size:clamp(36px,5vw,72px);letter-spacing:-.05em;white-space:nowrap}
+.stmt p{margin-top:70px;max-width:44ch;font-size:clamp(18px,1.6vw,22px);text-transform:uppercase;line-height:1.2;padding-bottom:28px;border-bottom:1px solid var(--red)}
+footer{padding:50px 0 40px}
+.fg{display:grid;grid-template-columns:1fr 1fr 1fr;gap:30px;text-transform:uppercase;font-size:15px}
+.fg a{display:flex;gap:8px;margin-bottom:8px}
+.fg a:hover{opacity:.6}
+.fg .c{text-align:center}.fg .r{text-align:right;justify-items:end;display:grid;align-content:start}
+.fb{display:flex;justify-content:space-between;align-items:center;margin-top:60px;font-size:14px;text-transform:uppercase}
+.fb .so{display:flex;gap:16px}.fb .so svg{width:24px}
+
+/* overlays */
+.sheet{position:fixed;inset:0;z-index:90;display:none;place-items:center;background:#202020cc;padding:20px}
+.sheet.on{display:grid}
+.sheet .in{background:var(--cream);width:min(820px,100%);max-height:90vh;overflow:auto;display:grid;grid-template-columns:1fr 1.1fr;animation:fi .4s var(--e)}
+.sheet .in>img{width:100%;height:100%;object-fit:cover;max-height:90vh}
+.sheet .tx{padding:30px;display:grid;gap:16px;align-content:start}
+.sheet h3{font-family:"Lexend Exa";font-weight:300;font-size:30px;letter-spacing:-.05em;text-transform:uppercase;line-height:1.05}
+.sheet .rm{border-top:1px solid var(--red);padding-top:12px}
+.sheet .rm b{display:inline-block;font-size:12px;text-transform:uppercase;padding:3px 8px;background:var(--red);color:#fff;margin-bottom:6px}
+.sheet .rm.od b{background:var(--blue)}
+.sheet .rm p{color:var(--ink)}
+.xb{position:absolute;top:20px;right:20px;width:46px;height:46px;background:#fff;color:var(--ink);display:grid;place-items:center;font-size:18px;z-index:2}
+.vlb video{max-height:80vh;width:min(1100px,100%)}
+.veil{position:fixed;inset:0;z-index:65;background:#2020208a;opacity:0;pointer-events:none;transition:opacity .4s}
+.veil.on{opacity:1;pointer-events:auto}
+.bag{position:fixed;z-index:70;right:0;top:0;bottom:0;width:min(420px,100%);background:var(--cream);transform:translateX(105%);transition:transform .45s var(--e);display:flex;flex-direction:column;padding:24px;border-left:1px solid var(--red)}
 .bag.on{transform:none}
 .bag header{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
-.bag header h3{font-family:"Cond";font-size:34px}
-.bag ul{list-style:none;flex:1;overflow:auto;display:grid;align-content:start;gap:10px}
-.bag li{display:flex;justify-content:space-between;gap:10px;align-items:center;padding:12px;border-radius:12px;background:var(--ink-3);font-size:14px}
+.bag header h3{font-family:"Lexend Exa";font-weight:300;font-size:30px;letter-spacing:-.05em;text-transform:uppercase}
+.bag ul{list-style:none;flex:1;overflow:auto;display:grid;align-content:start}
+.bag li{display:flex;justify-content:space-between;gap:10px;align-items:center;padding:14px 0;border-bottom:1px solid #ff000255;font-size:15px;color:var(--ink)}
 .bag .qt{display:flex;gap:8px;align-items:center}
-.bag .qt button{width:26px;height:26px;border-radius:50%;box-shadow:inset 0 0 0 1px var(--line)}
-.bag footer{display:grid;gap:12px;padding-top:16px;border-top:1px solid var(--line)}
-.bag .tot{display:flex;justify-content:space-between;font-weight:600}
-.veil{position:fixed;inset:0;z-index:65;background:#000a;opacity:0;pointer-events:none;transition:opacity .4s}
-.veil.on{opacity:1;pointer-events:auto}
-.x{width:40px;height:40px;border-radius:50%;box-shadow:inset 0 0 0 1px var(--line)}
-
-/* crews marquee */
-.crews{padding:46px 0;border-block:1px solid var(--line);overflow:hidden}
-.crews .tr{display:flex;width:max-content;animation:mq 40s linear infinite}
-.crews:hover .tr{animation-play-state:paused}
-.crews span{font-family:"Cond";font-size:clamp(30px,4vw,56px);padding:0 30px;white-space:nowrap;color:transparent;-webkit-text-stroke:1px var(--mute);transition:color .3s}
-.crews span:hover{color:var(--bb);-webkit-text-stroke-color:var(--bb)}
-@keyframes mq{to{transform:translateX(-50%)}}
-
-/* footer */
-footer.ft{padding:90px 0 40px}
-.ft .big{font-size:clamp(70px,16vw,240px);line-height:.8;color:var(--ink-3);user-select:none}
-.ft .g{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:30px;margin-top:40px;font-size:14.5px}
-.ft h4{font-size:13px;color:var(--mute);font-weight:500;margin-bottom:12px}
-.ft a{display:block;margin-bottom:6px}
-.ft a:hover{color:var(--bb)}
-.ft .cp{margin-top:50px;display:flex;justify-content:space-between;gap:20px;font-size:13px;color:var(--mute);flex-wrap:wrap}
-
-/* reveal */
-.rv{opacity:0;transform:translateY(24px);transition:opacity .9s var(--e),transform .9s var(--e)}
+.bag .qt button{width:26px;height:26px;border:1px solid var(--red);color:var(--red)}
+.bag footer{display:grid;gap:12px;padding-top:16px}
+.bag .tot{display:flex;justify-content:space-between;font-weight:600;text-transform:uppercase}
+.bx{width:40px;height:40px;border:1px solid var(--red)}
+.toast{position:fixed;left:50%;bottom:30px;z-index:95;transform:translate(-50%,160%);visibility:hidden;background:var(--ink);color:#fff;padding:12px 20px;font-size:14px;text-transform:uppercase;transition:transform .45s var(--e)}
+.toast.on{transform:translate(-50%,0);visibility:visible}
+.rv{opacity:0;transform:translateY(30px);transition:opacity 1s var(--e),transform 1s var(--e)}
 .rv.in{opacity:1;transform:none}
-
-/* toast */
-.toast{visibility:hidden;opacity:0;position:fixed;left:50%;bottom:30px;z-index:95;transform:translate(-50%,140%);background:var(--bone);color:var(--ink);padding:12px 20px;border-radius:999px;font-weight:600;font-size:14px;transition:transform .45s var(--e);box-shadow:var(--sh)}
-.toast.on{transform:translate(-50%,0);visibility:visible;opacity:1}
-
-/* dock (mobile) */
+.prog{position:fixed;top:0;left:0;height:3px;width:100%;background:var(--ink);transform-origin:0;transform:scaleX(0);z-index:70;pointer-events:none}
 .dock{display:none}
-.prog{position:fixed;top:0;left:0;height:2px;width:100%;background:var(--bb);transform-origin:0;transform:scaleX(0);z-index:60;pointer-events:none}
 
 @media (max-width:1000px){
  .nl{display:none}
- .sh,.sp .g,.soc .g,.app .g,.cola,.ticket,.yr,.film{grid-template-columns:1fr}
- .sh .lede{justify-self:start}
- .ticket .fl{min-height:400px}
- .ticket .tx:before{display:none}
- .fly{position:relative;top:0;max-width:340px}
- .shop .g{grid-template-columns:1fr 1fr}
- .app .g{gap:40px}
+ .cards{grid-template-columns:1fr 1fr}
+ .pc:nth-child(n){margin-top:0}.pc:nth-child(even){margin-top:50px}
+ .eg,.sg{grid-template-columns:1fr 1fr}
+ .two,.app .two{grid-template-columns:1fr}
+ .sheet .in{grid-template-columns:1fr}
+ .sheet .in>img{max-height:40vh}
 }
 @media (max-width:700px){
  body{padding-bottom:calc(84px + env(safe-area-inset-bottom))}
- section{padding:80px 0}
- .wrap{width:calc(100% - 36px)}
- .nav{padding:12px 16px}
- .nav .btn{display:none}
- .hero{cursor:auto}
- .hint{top:24%}
- .phone{width:min(330px,100%)}
- .nr{gap:6px}
- .lang button{padding:6px 8px}
- .hin{padding-bottom:118px}
- .ticket .fl .date{font-size:72px}
- .hin .wrap{flex-direction:column;align-items:start;gap:20px}
- .next .wrap{grid-template-columns:1fr;gap:12px}
- .cd{font-size:36px;gap:16px}
- .ticket .tx{padding:26px 20px}
- .tinfo{grid-template-columns:1fr}
- .ev button{grid-template-columns:96px 1fr auto;gap:14px}
- .ev .dt{font-size:34px}
- .ev .ex p{padding-left:0}
+ .wrap{width:calc(100% - 32px)}
+ .nav{padding:14px 16px}
+ .hero{min-height:760px}
+ .buddy{display:none}
+ .split .rl b{font-size:18px}
+ .split .rl.l{bottom:6%}
+ .split .rl.r{bottom:16%}
+ .split .cta{top:26%;bottom:auto}
+ .hbg{inset:0 0 55% 0}
+ .mq{top:16%}
+ .stack{width:62vw;top:13%}
+ .stack .top{height:96px}.stack .ph{height:180px}
+ .bign{transform:translateX(-50%);font-size:46vw;bottom:2%}
+ .play{bottom:auto;top:calc(13% + 200px);left:16px;width:46px;height:46px}
+ .hcopy{left:16px;right:16px;bottom:118px;text-align:left;justify-items:start;max-width:none}
+ .next .wrap{flex-wrap:wrap;gap:8px 18px;font-size:13px}
+ .big{padding-top:80px}
+ .plus{display:none}
+ .cards{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;margin-inline:-16px;padding:0 16px 10px;scrollbar-width:none;gap:16px}
+ .pc{flex:0 0 72%;scroll-snap-align:center;margin-top:0!important}
+ .resf{flex-direction:column;align-items:start}
+ .split{height:78vh}
+ .split .cta{left:4%;right:4%;justify-items:start;text-align:left}
+ .split .cta p{display:none}
+ .eg{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;margin-inline:-16px;padding:0 16px 10px;scrollbar-width:none;gap:16px}
+ .ec{flex:0 0 76%;scroll-snap-align:center}
+ .pd{width:200px}
  .uses{grid-template-columns:1fr 1fr}
- form.f{grid-template-columns:1fr;padding:22px}
- .stp{grid-template-columns:1fr}
+ form.f,.stp{grid-template-columns:1fr}
  .plans{grid-template-columns:1fr}
- .mods{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;margin-inline:-18px;padding:0 18px;scrollbar-width:none;gap:8px}
- .mods li{flex:0 0 78%;scroll-snap-align:center}
- .mods button{height:100%;background:var(--ink-2)}
- .shop .g{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;margin-inline:-18px;padding:0 18px 10px;scrollbar-width:none}
- .shop .g .prod{flex:0 0 76%;scroll-snap-align:center}
- .gal{grid-template-columns:1fr 1fr}
- .ft .g{grid-template-columns:1fr 1fr}
- .ft .g>div:first-child{grid-column:1/-1}
- .bag{inset:auto 0 0 0;width:100%;max-height:80vh;border-radius:26px 26px 0 0;transform:translateY(105%)}
- .bag:before{content:"";width:42px;height:5px;border-radius:5px;background:var(--line);margin:-10px auto 14px}
- .dock{display:flex;position:fixed;z-index:55;left:12px;right:12px;bottom:calc(10px + env(safe-area-inset-bottom));justify-content:space-around;padding:8px 6px;border-radius:24px;background:#1d1526d9;-webkit-backdrop-filter:saturate(160%) blur(18px);backdrop-filter:saturate(160%) blur(18px);box-shadow:0 20px 40px -16px #000,inset 0 0 0 1px #ffffff14;transition:transform .45s var(--e)}
- .dock.hide{transform:translateY(150%)}
- .dock a{flex:1;display:grid;place-items:center;gap:3px;font-size:10.5px;font-weight:500;color:var(--mute);padding:6px 0;border-radius:16px;transition:color .3s,background .3s,transform .2s}
- .dock a svg{width:22px;height:22px}
- .dock a.on{color:var(--ink);background:var(--bb)}
+ .mods{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:8px;border:0;margin-inline:-16px;padding:0 16px;scrollbar-width:none}
+ .mods li{flex:0 0 80%;scroll-snap-align:center}
+ .mods button{border:1px solid var(--red);padding:14px;height:100%}
+ .phone{width:min(330px,100%)}
+ .sg{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;margin-inline:-16px;padding:0 16px 10px;scrollbar-width:none;gap:16px}
+ .sg .prod{flex:0 0 72%;scroll-snap-align:center}
+ .stmt .top{flex-direction:column;align-items:start}
+ .fg{grid-template-columns:1fr 1fr}.fg .c{text-align:left}.fg .r{grid-column:1/-1;justify-items:start;text-align:left}
+ .bag{inset:auto 0 0 0;width:100%;max-height:80vh;transform:translateY(105%);border:0;border-top:1px solid var(--red)}
+ .bag:before{content:"";width:42px;height:4px;background:var(--red);opacity:.4;margin:-10px auto 14px}
+ .dock{display:flex;position:fixed;z-index:55;left:10px;right:10px;bottom:calc(10px + env(safe-area-inset-bottom));justify-content:space-around;padding:7px 5px;background:#ede3dde6;-webkit-backdrop-filter:saturate(160%) blur(16px);backdrop-filter:saturate(160%) blur(16px);border:1px solid var(--red);transition:transform .45s var(--e)}
+ .dock.hide{transform:translateY(160%)}
+ .dock a{flex:1;display:grid;place-items:center;gap:3px;font-size:10px;font-weight:600;text-transform:uppercase;padding:6px 0;transition:background .3s,color .3s,transform .2s}
+ .dock a svg{width:21px;height:21px}
+ .dock a.on{background:var(--red);color:#fff}
  .dock a:active{transform:scale(.92)}
  .toast{bottom:100px}
 }
@@ -399,86 +447,98 @@ footer.ft{padding:90px 0 40px}
 </head>
 <body>
 <div class="prog" id="prog"></div>
-
 <header class="nav" id="nav">
- <a class="logo" href="#top" aria-label="Amagatall d'Hilari, inici"><b>AMAGATALL</b><small>D'HILARI</small></a>
+ <a class="logo" href="#top" aria-label="Amagatall d'Hilari, inici">AMAGATALL<small>D'HILARI</small></a>
  <nav class="nl" aria-label="Principal">
-  <a href="#festes" data-t="n1">Festes</a><a href="#arxiu" data-t="n2">Arxiu</a><a href="#espai" data-t="n3">L'espai</a><a href="#socis" data-t="n4">Fes-te soci</a><a href="#app" data-t="n5">App</a><a href="#botiga" data-t="n6">Botiga</a>
+  <a href="#festes"><span data-t="n1">Festes</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 8a2 2 0 0 0 0 4v4h18v-4a2 2 0 0 1 0-4V4H3Z"/><path d="M14 4v12" stroke-dasharray="2 2"/></svg></a>
+  <a href="#qui"><span data-t="n7">Qui punxa</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="2"/></svg></a>
+  <a href="#espai"><span data-t="n3">L'espai</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 10 12 4l9 6v10H3Z"/></svg></a>
+  <a href="#socis"><span data-t="dS">Socis</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M7 15h4"/></svg></a>
+  <a href="#app"><span>App</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="7" y="3" width="10" height="18" rx="3"/></svg></a>
+  <a href="#botiga"><span data-t="n6">Botiga</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 8h14l-1 12H6L5 8Z"/><path d="M9 8a3 3 0 0 1 6 0"/></svg></a>
  </nav>
  <div class="nr">
   <div class="lang" role="group" aria-label="Idioma"><button aria-pressed="true" data-l="va">VA</button><button aria-pressed="false" data-l="es">ES</button><button aria-pressed="false" data-l="en">EN</button></div>
-  <button class="bagb" id="bagb" aria-label="Cistella"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 8h14l-1 12H6L5 8Z"/><path d="M9 8a3 3 0 0 1 6 0"/></svg><b id="bagn">0</b></button>
-  <a class="btn y" href="#socis" data-t="cta">Fes-te soci</a>
+  <button class="bagb" id="bagb" aria-label="Cistella"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 8h14l-1 12H6L5 8Z"/><path d="M9 8a3 3 0 0 1 6 0"/></svg><b id="bagn">0</b></button>
  </div>
 </header>
 
 <main>
 <section class="hero" id="top" aria-label="Amagatall d'Hilari">
- <video src="hero.mp4" poster="hero.jpg" autoplay muted loop playsinline aria-hidden="true"></video>
- <div class="lit"></div>
- <div class="dark" id="dark"><div class="ghost d" aria-hidden="true">AMAGATALL</div></div>
- <div class="torch" id="torch" aria-hidden="true"></div>
- <p class="hint" id="hint"><i></i><span data-t="hint">Mou la llum per trobar l'amagatall</span></p>
- <div class="hin"><div class="wrap">
-  <div><h1 class="d" data-t="h1">Un lloc on amagar-te i ser lliure.</h1><p data-t="h1p">Associació cultural musical. Keep it underground, València.</p></div>
-  <a class="btn y" href="#festes" data-t="hbtn">Pròxima festa · 31 des</a>
- </div></div>
+ <div class="hbg"><div class="tint"><img src="ph_dance.jpg" alt=""></div></div>
+ <div class="mq" aria-hidden="true"><span>AMAGATALL</span><span>AMAGATALL</span><span>AMAGATALL</span><span>AMAGATALL</span></div>
+ <div class="bign" aria-hidden="true">31.12</div>
+ <div class="stack">
+  <div class="top"><span class="typed" id="typed" aria-live="polite"></span></div>
+  <div class="ph" id="hph">
+   <div class="tint on"><img src="ph_toast.jpg" alt=""></div>
+   <div class="tint"><img src="v4.jpg" alt=""></div>
+   <div class="tint"><img src="ph_hug.jpg" alt=""></div>
+  </div>
+  <div class="dots" id="hdots"><button class="on" aria-label="1"></button><button aria-label="2"></button><button aria-label="3"></button></div>
+ </div>
+ <svg class="buddy" id="buddy" viewBox="0 0 120 160" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <rect x="22" y="56" width="76" height="96" rx="6"/><circle cx="60" cy="88" r="18"/><circle cx="60" cy="88" r="5"/><circle cx="60" cy="130" r="10"/>
+  <path d="M34 56c0-26 12-40 26-40s26 14 26 40"/>
+  <g class="ey" id="eyes"><circle cx="50" cy="38" r="3" fill="currentColor"/><circle cx="70" cy="38" r="3" fill="currentColor"/></g>
+  <path d="M28 64c-10-4-16 2-18 10M92 64c10-4 16 2 18 10"/>
+ </svg>
+ <button class="play" id="play" aria-label="Veure l'aftermovie"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4v16l13-8Z"/></svg></button>
+ <div class="hcopy"><b data-t="h1">Un lloc on amagar-te i ser lliure</b><p data-t="h1p">Associació cultural musical. Keep it underground, València.</p><a class="tk" href="#festes"><span data-t="hbtn">Pròxima festa · 31 des</span><i><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 3 3 14l3 3a2 2 0 0 1 3 3l3 3 11-11-3-3a2 2 0 0 1-3-3Z"/></svg></i></a></div>
 </section>
 
-<div class="next" aria-live="polite"><div class="wrap">
- <span class="tag" data-t="nx">Pròxima data</span>
- <div><b class="d" style="font-size:28px">31 DES · APA + AMAGATALL DNB</b><div class="mute" style="font-size:14px" data-t="nxs">Cap d'any al Black Box i a l'Overdrive</div></div>
- <div class="cd" id="cd"><span><b id="cdd">--</b><small data-t="dd">dies</small></span><span><b id="cdh">--</b><small data-t="hh">hores</small></span><span><b id="cdm">--</b><small data-t="mm">min</small></span></div>
+<div class="next"><div class="wrap">
+ <span class="live" data-t="nx">Pròxima data</span>
+ <span>31 DES · APA + AMAGATALL DNB</span>
+ <span class="cd" id="cd"><span><b id="cdd">--</b> <span data-t="dd">dies</span></span><span><b id="cdh">--</b> h</span><span><b id="cdm">--</b> min</span></span>
 </div></div>
 
-<section id="festes">
- <div class="wrap">
-  <div class="sh"><h2 class="d rv" data-t="fT">Pròximes festes</h2><p class="lede rv" data-t="fL">Dues sales, dos sons. Tria la teua sala i mira qui punxa.</p></div>
-  <article class="ticket rv">
-   <div class="fl"><img src="am_prog.jpg" alt="Cartell de la programació 2026 d'Amagatall d'Hilari"><span class="date d">31·12</span></div>
-   <div class="tx">
-    <div class="rooms" role="tablist" aria-label="Sales">
-     <button role="tab" aria-selected="true" data-r="bb">Black Box Room</button>
-     <button role="tab" aria-selected="false" data-r="od">Overdrive Room</button>
-    </div>
-    <div class="room" id="room"></div>
-    <div class="tinfo">
-     <div><small data-t="tA">Obertura</small>31 des · nit</div>
-     <div><small data-t="tB">Entrades</small><span data-t="tBv">Socis tenen preu reduït</span></div>
-    </div>
-    <div class="tact"><a class="btn y" href="#socis" data-t="tC">Vull el meu carnet</a><button class="btn o" id="ics" data-t="tD">Afegir al calendari</button></div>
-   </div>
-  </article>
-  <div class="upc">
-   <div class="u"><div><b>2027</b><br><span data-t="u1">Nova temporada · dates molt prompte</span></div><span class="ics">TBA</span></div>
-   <div class="u"><div><b data-t="u2t">Avisa'm</b><br><span data-t="u2">Rep les dates abans que ningú</span></div><a class="ics" href="#socis" data-t="u2b">Socis</a></div>
-  </div>
+<section class="res wrap" id="qui">
+ <div class="big"><span class="plus">+</span><h2 class="x1 rv" data-t="qT">Qui punxa</h2><span class="plus">+</span></div>
+ <h2 class="x1 h2" style="font-size:clamp(32px,3.6vw,52px)" data-t="qS">Residents i col·lectius</h2>
+ <div class="cards">
+  <article class="pc rv" data-ev="6"><div class="tint"><img src="v1.jpg" alt=""></div><div><h3>APA</h3><p>Hardtechno<small data-t="q1">Cap d'any 2026</small></p><span class="room">Black Box</span></div></article>
+  <article class="pc rv" data-ev="6"><div class="tint b"><img src="v3.jpg" alt=""></div><div><h3>Amagatall DnB</h3><p>Drum &amp; Bass<small data-t="q2">Residents de la casa</small></p><span class="room od">Overdrive</span></div></article>
+  <article class="pc rv" data-ev="5"><div class="tint"><img src="v5.jpg" alt=""></div><div><h3>Anguila Elektronika</h3><p>Hardtechno<small>30 oct 2026</small></p><span class="room">Black Box</span></div></article>
+  <article class="pc rv" data-ev="1"><div class="tint b"><img src="v6.jpg" alt=""></div><div><h3>Spartan Rave</h3><p>Tekno &amp; hardtechno<small>17 abr · 31 jul 2026</small></p><span class="room">Black Box</span></div></article>
+ </div>
+ <div class="resf"><p data-t="qL">Col·lectius de València que fan possible cada nit, sala per sala.</p><a class="pill" href="#festes"><span data-t="qB">Totes les festes</span><span class="eyes" aria-hidden="true"><b></b><b></b></span></a></div>
+</section>
+
+<section class="split" id="sales" style="--k:50%">
+ <div class="side a"><div class="tint"><img src="ph_green.jpg" alt=""></div></div>
+ <div class="side b"><div class="tint b"><img src="v2.jpg" alt=""></div></div>
+ <h2 class="x1" style="color:#fff" data-t="spT">Dues sales, una nit</h2>
+ <div class="cta"><p data-t="spL">Arrossega la línia: a l'esquerra, el Black Box. A la dreta, l'Overdrive.</p><a class="tk" href="#socis"><span data-t="tC">Vull el meu carnet</span><i><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 3 3 14l3 3a2 2 0 0 1 3 3l3 3 11-11-3-3a2 2 0 0 1-3-3Z"/></svg></i></a></div>
+ <div class="rl l"><b>Black Box Room</b>Hardtechno · tekno</div>
+ <div class="rl r"><b>Overdrive Room</b>DnB · psytrance · hardtek</div>
+ <button class="knob" id="knob" aria-label="Arrossega per canviar de sala" role="slider" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 6-6 6 6 6M15 6l6 6-6 6"/></svg></button>
+</section>
+
+<section class="evs wrap" id="festes">
+ <h2 class="x1 rv" style="font-size:clamp(48px,7vw,110px);margin-bottom:56px" data-t="fT">Festes</h2>
+ <div class="filter" role="group"><button aria-pressed="true" data-f="all" data-t="fA">Totes</button><button aria-pressed="false" data-f="next" data-t="fN">Pròximes</button><button aria-pressed="false" data-f="past" data-t="fP2">Arxiu 2026</button></div>
+ <div class="eg" id="eg"></div>
+</section>
+
+<section class="pol" id="arxiu">
+ <div class="wrap"><h2 class="x1 rv" data-t="pT">Fotos de l'última nit</h2></div>
+ <div class="pt" id="pt"></div>
+</section>
+
+<section class="vc">
+ <video id="vbg" src="hero2.mp4" poster="v4.jpg" autoplay muted loop playsinline aria-hidden="true"></video>
+ <div class="ring" id="ring">
+  <svg class="rt" viewBox="0 0 200 200" aria-hidden="true"><defs><path id="cp" d="M100,100 m-88,0 a88,88 0 1,1 176,0 a88,88 0 1,1 -176,0"/></defs><text font-family="Lexend Exa" font-size="11" fill="currentColor" letter-spacing="3"><textPath href="#cp" id="ringt">FES-TE SOCI · KEEP IT UNDERGROUND · FES-TE SOCI · KEEP IT UNDERGROUND ·</textPath></text></svg>
+  <a class="tk" href="#socis"><span data-t="cta">Fes-te soci</span><i><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 3 3 14l3 3a2 2 0 0 1 3 3l3 3 11-11-3-3a2 2 0 0 1-3-3Z"/></svg></i></a>
  </div>
 </section>
 
-<section class="crews" aria-label="Col·lectius que han passat per l'Amagatall">
- <div class="tr" id="crews"></div>
-</section>
-
-<section class="arch" id="arxiu">
- <div class="wrap">
-  <div class="sh"><h2 class="d rv" data-t="aT">Arxiu 2026</h2><p class="lede rv" data-t="aL">Totes les nits d'enguany, sala per sala. Obri una data per veure el line-up.</p></div>
-  <div class="yr">
-   <div class="fly" id="fly"><img src="am_prog.jpg" alt="Cartell de la data seleccionada"></div>
-   <ul class="ev" id="ev"></ul>
-  </div>
-  <div class="film">
-   <div class="vid"><video id="after" src="hero2.mp4" poster="v4.jpg" muted loop playsinline preload="metadata"></video><button class="pp" id="pp"><i>▶</i><span data-t="am">Aftermovie</span></button></div>
-   <div class="gal" id="gal"></div>
-  </div>
- </div>
-</section>
-
-<section class="sp" id="espai">
- <div class="wrap g">
+<section class="pane" id="espai">
+ <div class="wrap two">
   <div>
-   <h2 class="d rv" data-t="eT">Lloga l'espai</h2>
-   <p class="lede rv" style="margin-top:22px" data-t="eL">Sales polivalents per a assajos, gravacions, exposicions, classes i esdeveniments, amb rocòdrom i zona exterior. Tria què necessites:</p>
+   <h2 class="x1 h2 rv" style="margin-bottom:26px" data-t="eT">Lloga l'espai</h2>
+   <p class="lead rv" data-t="eL">Sales polivalents per a assajos, gravacions, exposicions, classes i esdeveniments, amb rocòdrom i zona exterior. Tria què necessites:</p>
    <div class="uses" id="uses"></div>
    <div class="cond">
     <div><b data-t="c1">Qui</b><span data-t="c1v">Socis, col·lectius i projectes culturals</span></div>
@@ -487,91 +547,91 @@ footer.ft{padding:90px 0 40px}
    </div>
   </div>
   <form class="f rv" id="fe" novalidate>
-   <h3 class="d" data-t="eF">Sol·licitud</h3>
-   <div class="chosen" id="chosen"><em data-t="eN">Encara no has triat cap ús</em></div>
+   <h3 data-t="eF">Sol·licitud</h3>
+   <div class="chosen" id="chosen"></div>
    <label><span data-t="lN">Nom o col·lectiu *</span><input name="n" required autocomplete="name"></label>
    <label><span data-t="lE">Correu *</span><input name="e" type="email" required autocomplete="email"></label>
    <label><span data-t="lD">Data</span><input name="d" type="date"></label>
    <label><span data-t="lP">Persones aprox.</span><input name="p" type="number" min="1" inputmode="numeric"></label>
    <label class="full"><span data-t="lM">Conta'ns el projecte</span><textarea name="m" rows="3"></textarea></label>
    <p class="msg" id="feM"></p>
-   <button class="btn y full" type="submit" style="justify-content:center" data-t="eS">Enviar sol·licitud</button>
+   <button class="tk r sendb" type="submit"><span data-t="eS">Enviar sol·licitud</span><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></button>
   </form>
  </div>
 </section>
 
 <section class="soc" id="socis">
- <div class="wrap g">
+ <div class="wrap two">
   <div>
-   <h2 class="d rv" data-t="sT">Fes-te soci</h2>
-   <p class="lede rv" style="margin-top:22px" data-t="sL">L'Amagatall és una associació: les festes existeixen perquè hi ha socis. Dona't d'alta en un minut i rep el teu carnet digital.</p>
+   <h2 class="x1 h2 rv" style="margin-bottom:26px" data-t="sT">Fes-te soci</h2>
+   <p class="lead rv" data-t="sL">L'Amagatall és una associació: les festes existeixen perquè hi ha socis. Dona't d'alta en un minut i rep el teu carnet digital.</p>
    <ul class="perks">
-    <li><i>1</i><span data-t="p1">Carnet digital amb QR únic per entrar més ràpid</span></li>
-    <li><i>2</i><span data-t="p2">Preu reduït a totes les festes (ex. 15 € socis / 20 € no socis a Techno Arts)</span></li>
-    <li><i>3</i><span data-t="p3">Descomptes al merch i als tallers</span></li>
-    <li><i>4</i><span data-t="p4">Dates i preventa abans que ningú</span></li>
+    <li><i>01</i><span data-t="p1">Carnet digital amb QR únic per entrar més ràpid</span></li>
+    <li><i>02</i><span data-t="p2">Preu reduït a totes les festes (ex. 15 € socis / 20 € no socis a Techno Arts)</span></li>
+    <li><i>03</i><span data-t="p3">Descomptes al merch i als tallers</span></li>
+    <li><i>04</i><span data-t="p4">Dates i preventa abans que ningú</span></li>
    </ul>
-   <div class="cardwrap">
+   <div class="cardw">
     <div class="card" id="card">
-     <div class="fc front"><div class="row"><span class="logo"><b style="font-size:22px">AMAGATALL</b><small style="font-size:9.5px">D'HILARI</small></span><span class="chip"></span></div>
-      <div class="row"><div><small data-t="cS">Soci/a</small><span class="nm" id="cn">EL TEU NOM</span></div><div style="text-align:right"><small>Nº</small><b id="cno" class="d" style="font-size:22px">0000</b></div></div></div>
-     <div class="fc back"><canvas id="qr" width="29" height="29"></canvas><div><small data-t="cV">Vàlid fins</small><b class="d" style="font-size:26px" id="cv">12 / 2027</b><small style="margin-top:10px" data-t="cQ">Mostra aquest QR a la porta</small></div></div>
+     <div class="fc front"><div class="row"><span class="logo" style="font-size:18px">AMAGATALL<small>D'HILARI</small></span><span class="mono" style="font-size:12px" id="cno">Nº 0000</span></div>
+      <div class="row"><div><small data-t="cS">Soci/a</small><span class="nm" id="cn">EL TEU NOM</span></div></div></div>
+     <div class="fc back"><canvas id="qr" width="29" height="29"></canvas><div><small data-t="cV">Vàlid fins</small><b class="x1" style="font-size:22px;display:block" id="cv">12 / 2027</b><small style="margin-top:10px" data-t="cQ">Mostra aquest QR a la porta</small></div></div>
     </div>
     <button class="flipb" id="flip" data-t="fl">Girar el carnet</button>
    </div>
   </div>
   <form class="f rv" id="fs" novalidate>
-   <div class="steps full" style="grid-column:1/-1"><i class="on"></i><i></i><i></i></div>
-   <div class="stp on" data-s="0">
-    <h3 class="d full" style="grid-column:1/-1;font-size:36px" data-t="s1">1 · Les teues dades</h3>
+   <div class="steps"><i class="on"></i><i></i><i></i></div>
+   <div class="stp on">
+    <h3 class="full" data-t="s1">1 · Les teues dades</h3>
     <label><span data-t="lN2">Nom i cognoms *</span><input name="nom" required autocomplete="name"></label>
     <label><span>DNI / NIE *</span><input name="dni" required></label>
     <label><span data-t="lE">Correu *</span><input name="mail" type="email" required autocomplete="email"></label>
     <label><span data-t="lB">Data de naixement *</span><input name="nx" type="date" required></label>
    </div>
-   <div class="stp" data-s="1">
-    <h3 class="d" style="grid-column:1/-1;font-size:36px" data-t="s2">2 · Tria la quota</h3>
-    <div class="plans" style="grid-column:1/-1">
-     <button type="button" class="plan" aria-pressed="true" data-p="a"><b data-t="pa">Anual</b><span data-t="pas">Un pagament, tot l'any</span></button>
-     <button type="button" class="plan" aria-pressed="false" data-p="r"><b data-t="pr">Renovació</b><span data-t="prs">Ja eres soci a la base antiga</span></button>
+   <div class="stp">
+    <h3 class="full" data-t="s2">2 · Tria la quota</h3>
+    <div class="plans">
+     <button type="button" class="plan" aria-pressed="true"><b data-t="pa">Anual</b><span data-t="pas">Un pagament, tot l'any</span></button>
+     <button type="button" class="plan" aria-pressed="false"><b data-t="pr">Renovació</b><span data-t="prs">Ja eres soci a la base antiga</span></button>
     </div>
-    <p class="mute" style="grid-column:1/-1;font-size:13.5px" data-t="pq">L'import i el pagament en línia es configuren amb l'associació.</p>
+    <p class="full" style="font-size:14px;opacity:.85" data-t="pq">L'import i el pagament en línia es configuren amb l'associació.</p>
    </div>
-   <div class="stp" data-s="2">
-    <h3 class="d" style="grid-column:1/-1;font-size:36px" data-t="s3">3 · Confirma</h3>
-    <label class="chk" style="grid-column:1/-1"><input type="checkbox" name="ok" required><span data-t="lg">Accepte els estatuts, les normes de convivència i la política de privacitat de l'associació.</span></label>
-    <label class="chk" style="grid-column:1/-1"><input type="checkbox" name="nw"><span data-t="lg2">Vull rebre les dates per correu.</span></label>
+   <div class="stp">
+    <h3 class="full" data-t="s3">3 · Confirma</h3>
+    <label class="chk full"><input type="checkbox" name="ok" required><span data-t="lg">Accepte els estatuts, les normes de convivència i la política de privacitat de l'associació.</span></label>
+    <label class="chk full"><input type="checkbox" name="nw"><span data-t="lg2">Vull rebre les dates per correu.</span></label>
    </div>
    <p class="msg" id="fsM"></p>
-   <div class="fbt"><button type="button" class="btn o" id="bk" style="visibility:hidden" data-t="bk">Enrere</button><button type="submit" class="btn y" id="nxb" data-t="nxb">Continuar</button></div>
+   <div class="fbt"><button type="button" class="tk" id="bk" style="visibility:hidden"><span data-t="bk">Enrere</span></button><button type="submit" class="tk" id="nxb"><span id="nxbt" data-t="nxb">Continuar</span><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></button></div>
   </form>
  </div>
 </section>
 
 <section class="app" id="app">
- <div class="wrap g">
+ <div class="wrap two">
   <div>
-   <h2 class="d rv" data-t="apT">Appmagatall</h2>
-   <p class="lede rv" style="margin-top:22px" data-t="apL">L'associació, a la butxaca. Socis, porta, staff i comptes en una sola app. Toca cada mòdul i prova-la al mòbil.</p>
+   <h2 class="x1 h2 rv" style="margin-bottom:26px">Appmagatall</h2>
+   <p class="lead rv" data-t="apL">L'associació, a la butxaca. Socis, porta, staff i comptes en una sola app. Toca cada mòdul i prova-la al mòbil.</p>
    <ul class="mods" id="mods" role="tablist">
-    <li><button role="tab" aria-selected="true" data-v="v1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M7 15h4M15 10h2v2h-2z"/></svg><div><b data-t="m1">Carnet i socis</b><span data-t="m1s">QR únic, quotes i beneficis</span></div></button></li>
-    <li><button role="tab" aria-selected="false" data-v="v2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 7V4h3M20 7V4h-3M4 17v3h3M20 17v3h-3M7 12h10"/></svg><div><b data-t="m2">App Porta</b><span data-t="m2s">Cerca per nom, DNI o QR · mode Live</span></div></button></li>
-    <li><button role="tab" aria-selected="false" data-v="v3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 4h6M5 8h14v12H5zM9 12h6M9 16h4"/></svg><div><b data-t="m3">Esdeveniments i staff</b><span data-t="m3s">Line-up, torns i checklist</span></div></button></li>
-    <li><button role="tab" aria-selected="false" data-v="v4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg><div><b data-t="m4">Economia</b><span data-t="m4s">Ingressos, despeses i Excel per a gestoria</span></div></button></li>
-    <li><button role="tab" aria-selected="false" data-v="v5"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 5h16v11H9l-5 4Z"/></svg><div><b data-t="m5">Comunitat</b><span data-t="m5s">Tauler d'anuncis i agenda</span></div></button></li>
+    <li><button role="tab" aria-selected="true" data-v="v1"><span class="n">01</span><div><b data-t="m1">Carnet i socis</b><span data-t="m1s">QR únic, quotes i beneficis</span></div></button></li>
+    <li><button role="tab" aria-selected="false" data-v="v2"><span class="n">02</span><div><b data-t="m2">App Porta</b><span data-t="m2s">Cerca per nom, DNI o QR · mode Live</span></div></button></li>
+    <li><button role="tab" aria-selected="false" data-v="v3"><span class="n">03</span><div><b data-t="m3">Esdeveniments i staff</b><span data-t="m3s">Line-up, torns i checklist</span></div></button></li>
+    <li><button role="tab" aria-selected="false" data-v="v4"><span class="n">04</span><div><b data-t="m4">Economia</b><span data-t="m4s">Ingressos, despeses i Excel per a gestoria</span></div></button></li>
+    <li><button role="tab" aria-selected="false" data-v="v5"><span class="n">05</span><div><b data-t="m5">Comunitat</b><span data-t="m5s">Tauler d'anuncis i agenda</span></div></button></li>
    </ul>
   </div>
   <div>
    <div class="phone rv"><div class="scr" id="scr">
     <div class="isl"></div>
     <div class="sbar"><span id="clk">23:58</span><span>●●● 5G</span></div>
-    <div class="ah"><b id="ahT">Carnet</b><span class="mute" style="font-size:12px">Appmagatall</span></div>
+    <div class="ah"><b id="ahT">Carnet</b><span style="font-size:11px">APPMAGATALL</span></div>
     <div class="av">
      <div class="vw on" id="v1">
-      <div class="mini"><div class="row" style="display:flex;justify-content:space-between"><span class="logo"><b style="font-size:16px">AMAGATALL</b><small style="font-size:7px">D'HILARI</small></span><small style="font-size:10px">Nº 0412</small></div><div style="display:flex;justify-content:space-between;align-items:end"><div><small style="font-size:10px;opacity:.7">Soci/a</small><b class="d" style="font-size:20px;display:block">LAIA MARTÍ</b></div><div class="q"><canvas id="qr2" width="29" height="29"></canvas></div></div></div>
-      <div class="mcard"><h4 data-t="a1">Quota 2027</h4><div style="display:flex;justify-content:space-between;align-items:center"><span class="mute" data-t="a1s">Renovació automàtica · gener</span><span style="color:var(--ok);font-weight:600">● Activa</span></div></div>
-      <div class="mcard"><h4 data-t="a2">Els teus beneficis</h4><div class="lup"><div><span>Techno Arts</span><b>-5 €</b></div><div><span>Merch</span><b>-10 %</b></div><div><span data-t="a2t">Tallers</span><b>-15 %</b></div></div></div>
-      <div class="mcard"><h4 data-t="a3">Felicitats! 🎂</h4><span class="mute" data-t="a3s">Correu automàtic amb una consumició de regal el dia del teu aniversari.</span></div>
+      <div class="mini"><div style="display:flex;justify-content:space-between"><span class="logo" style="font-size:15px">AMAGATALL<small style="font-size:7px">D'HILARI</small></span><small class="mono" style="font-size:10px">Nº 0412</small></div><div style="display:flex;justify-content:space-between;align-items:end"><div><small style="font-size:10px;opacity:.8">SOCI/A</small><b style="font-family:'Lexend Exa';font-weight:400;font-size:17px;letter-spacing:-.05em;display:block">LAIA MARTÍ</b></div><div class="q"><canvas id="qr2" width="29" height="29"></canvas></div></div></div>
+      <div class="mc"><h4 data-t="a1">Quota 2027</h4><div style="display:flex;justify-content:space-between"><span style="opacity:.6" data-t="a1s">Renovació automàtica · gener</span><b style="color:#1a9b5c">● OK</b></div></div>
+      <div class="mc"><h4 data-t="a2">Els teus beneficis</h4><div class="lup"><div><span>Techno Arts</span><b>-5 €</b></div><div><span>Merch</span><b>-10 %</b></div><div><span data-t="a2t">Tallers</span><b>-15 %</b></div></div></div>
+      <div class="mc"><h4 data-t="a3">Felicitats! 🎂</h4><span style="opacity:.6" data-t="a3s">Correu automàtic amb una consumició de regal el dia del teu aniversari.</span></div>
      </div>
      <div class="vw" id="v2">
       <div class="live"><span>● LIVE · 31 DES</span><b id="cnt">212</b></div>
@@ -579,21 +639,21 @@ footer.ft{padding:90px 0 40px}
       <ul class="prs" id="prs"></ul>
      </div>
      <div class="vw" id="v3">
-      <div class="mcard"><h4>31 DES · Black Box + Overdrive</h4><div class="lup"><div><span>23:30</span><b>Residents</b></div><div><span>01:30</span><b>APA</b></div><div><span>04:00</span><b>Amagatall DnB</b></div></div></div>
-      <div class="mcard"><h4 data-t="b1">Staff i torns</h4><div class="lup"><div><span data-t="b1a">Porta</span><b>Pau · Clara</b></div><div><span>Barra</span><b>Toni · Sara</b></div><div><span data-t="b1b">So</span><b>Jordi</b></div></div></div>
-      <h4 style="font-size:13px;margin:12px 4px 8px" class="mute">Checklist</h4>
+      <div class="mc"><h4>31 DES · Black Box + Overdrive</h4><div class="lup"><div><span>23:30</span><b>Residents</b></div><div><span>01:30</span><b>APA</b></div><div><span>04:00</span><b>Amagatall DnB</b></div></div></div>
+      <div class="mc"><h4 data-t="b1">Staff i torns</h4><div class="lup"><div><span data-t="b1a">Porta</span><b>Pau · Clara</b></div><div><span>Barra</span><b>Toni · Sara</b></div><div><span data-t="b1b">So</span><b>Jordi</b></div></div></div>
+      <h4 style="font-size:12px;margin:12px 4px 8px;opacity:.6">CHECKLIST</h4>
       <ul class="chkl" id="chkl"></ul>
      </div>
      <div class="vw" id="v4">
-      <div class="kp"><div><small data-t="k1">Ingressos 2026</small><b id="k1">0 €</b></div><div><small data-t="k2">Balanç</small><b id="k2" style="color:var(--ok)">0 €</b></div></div>
-      <div class="mcard"><h4 data-t="k3">Per esdeveniment</h4><div class="bars" id="bars"></div><div style="display:flex;gap:14px;font-size:11.5px"><span><i style="display:inline-block;width:8px;height:8px;border-radius:2px;background:var(--bb)"></i> <span data-t="k4">Ingressos</span></span><span><i style="display:inline-block;width:8px;height:8px;border-radius:2px;background:var(--od)"></i> <span data-t="k5">Despeses</span></span></div></div>
-      <div class="mcard"><h4 data-t="k6">Tiquet escanejat</h4><span class="mute">Proveïdor begudes · 384,20 € · 30/10</span></div>
+      <div class="kp"><div><small data-t="k1">Ingressos 2026</small><b id="k1">0 €</b></div><div><small data-t="k2">Balanç</small><b id="k2">0 €</b></div></div>
+      <div class="mc"><h4 data-t="k3">Per esdeveniment</h4><div class="bars" id="bars"></div><div style="display:flex;gap:14px;font-size:11px"><span>■ <span data-t="k4">Ingressos</span></span><span style="color:var(--ink)">■ <span data-t="k5">Despeses</span></span></div></div>
+      <div class="mc"><h4 data-t="k6">Tiquet escanejat</h4><span style="opacity:.6">Proveïdor begudes · 384,20 € · 30/10</span></div>
       <button class="xl" id="xl" data-t="k7">Exportar a Excel per a la gestoria</button>
      </div>
      <div class="vw" id="v5">
-      <div class="mcard post"><span class="ini">A</span><div><p><b>Anguila Elektronika</b> · <span data-t="c5a">Busquem VJ per a la pròxima</span></p><small>fa 2 h</small></div></div>
-      <div class="mcard post"><span class="ini" style="background:var(--bb)">J</span><div><p><b>Junta</b> · <span data-t="c5b">Assemblea de socis el 15 de desembre</span></p><small>ahir</small></div></div>
-      <div class="mcard post"><span class="ini" style="background:var(--ok)">T</span><div><p><b>Tallers</b> · <span data-t="c5c">Inscripcions obertes: taller de DJ amb vinil</span></p><small>dl.</small></div></div>
+      <div class="mc post"><span class="ini">A</span><div><p><b>Anguila Elektronika</b> · <span data-t="c5a">Busquem VJ per a la pròxima</span></p><small>fa 2 h</small></div></div>
+      <div class="mc post"><span class="ini" style="background:var(--ink)">J</span><div><p><b>Junta</b> · <span data-t="c5b">Assemblea de socis el 15 de desembre</span></p><small>ahir</small></div></div>
+      <div class="mc post"><span class="ini" style="background:var(--blue)">T</span><div><p><b>Tallers</b> · <span data-t="c5c">Inscripcions obertes: taller de DJ amb vinil</span></p><small>dl.</small></div></div>
      </div>
     </div>
     <div class="scanv" id="scanv"><div class="fr"></div><p data-t="sc">Apunta al QR del carnet…</p></div>
@@ -606,193 +666,202 @@ footer.ft{padding:90px 0 40px}
 
 <section class="shop" id="botiga">
  <div class="wrap">
-  <div class="sh"><h2 class="d rv" data-t="bT">Botiga</h2><p class="lede rv" data-t="bL">Merch de l'associació. Cada compra ajuda a mantindre l'espai obert.</p></div>
-  <div class="g" id="prods"></div>
+  <h2 class="x1 h2 rv" data-t="bT">Botiga</h2>
+  <div class="sg" id="prods"></div>
   <p class="note" data-t="bN">Botiga d'exemple per a la proposta: productes i preus orientatius.</p>
-  <div class="cola">
-   <div><h2 class="d rv" style="font-size:clamp(44px,6vw,80px)" data-t="oT">Col·labora</h2><p class="lede rv" style="margin-top:20px" data-t="oL">DJ, VJ, artista, col·lectiu o tallerista? Envia'ns la teua proposta i parlem.</p></div>
+  <div class="two cola">
+   <div><h2 class="x1 h2 rv" style="margin-bottom:26px" data-t="oT">Col·labora</h2><p class="lead" data-t="oL">DJ, VJ, artista, col·lectiu o tallerista? Envia'ns la teua proposta i parlem.</p></div>
    <form class="f" id="fo" novalidate>
     <label><span data-t="lN">Nom o col·lectiu *</span><input name="n" required></label>
     <label><span data-t="oR">Què fas *</span><select name="r" required><option value="">—</option><option>DJ</option><option>VJ</option><option data-t="oR1">Artista / expo</option><option data-t="oR2">Taller</option><option data-t="oR3">Col·lectiu / festa</option></select></label>
     <label class="full"><span data-t="oLk">Enllaç (SoundCloud, Instagram…) *</span><input name="l" required inputmode="url"></label>
     <p class="msg" id="foM"></p>
-    <button class="btn y full" type="submit" style="justify-content:center" data-t="oS">Enviar proposta</button>
+    <button class="tk r sendb" type="submit"><span data-t="oS">Enviar proposta</span><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></button>
    </form>
   </div>
  </div>
 </section>
+
+<section class="stmt">
+ <div class="wrap">
+  <div class="top"><h2 class="x1" data-t="stT">Per a festes. O per a comunitat. O totes dues.</h2><span class="c">© 2026</span></div>
+  <p data-t="stP">Amagatall d'Hilari és una associació cultural musical de València: dues sales, rocòdrom, tallers i una comunitat de socis que manté viva l'escena underground.</p>
+ </div>
+</section>
 </main>
 
-<footer class="ft">
+<footer>
  <div class="wrap">
-  <div class="big d" aria-hidden="true">AMAGATALL</div>
-  <div class="g">
-   <div><p class="mute" style="max-width:36ch" data-t="ftL">Associació Cultural Musical Amagatall d'Hilari. La ubicació s'envia als socis.</p></div>
-   <div><h4 data-t="ft1">Festes</h4><a href="#festes" data-t="fP">Pròximes</a><a href="#arxiu" data-t="n2">Arxiu</a></div>
-   <div><h4 data-t="ft2">Associació</h4><a href="#socis" data-t="n4">Fes-te soci</a><a href="#espai" data-t="n3">L'espai</a><a href="#botiga" data-t="n6">Botiga</a></div>
-   <div><h4 data-t="ft3">Contacte</h4><a href="https://instagram.com/amagatall_d_hilari" target="_blank" rel="noopener">Instagram</a><a href="https://ig.me/m/amagatall_d_hilari" data-t="ft4">Missatge directe</a></div>
+  <div class="fg">
+   <div><a href="#festes"><span data-t="n1">Festes</span> ↳</a><a href="#qui"><span data-t="n7">Qui punxa</span> ↳</a><a href="#espai"><span data-t="n3">L'espai</span> ↳</a><a href="#socis"><span data-t="dS">Socis</span> ↳</a><a href="#botiga"><span data-t="n6">Botiga</span> ↳</a></div>
+   <div class="c"><p data-t="ftL">La ubicació s'envia als socis</p><p>València</p></div>
+   <div class="r"><a href="https://ig.me/m/amagatall_d_hilari">@amagatall_d_hilari</a><a href="https://amcadh.wordpress.com" target="_blank" rel="noopener">amcadh.wordpress.com</a></div>
   </div>
-  <div class="cp"><span>© 2026 Amagatall d'Hilari</span><span>Web · Studio Horta</span></div>
+  <div class="fb"><div class="so"><a href="https://instagram.com/amagatall_d_hilari" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></svg></a></div><span>Web · Studio Horta</span></div>
  </div>
 </footer>
 
-<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Galeria"><button class="x" id="lbx" aria-label="Tancar">✕</button><button class="pv" id="lbp" aria-label="Anterior">‹</button><img id="lbi" alt=""><button class="nx" id="lbn" aria-label="Següent">›</button><span class="ct" id="lbc"></span></div>
+<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-label="Festa"><button class="xb" data-close aria-label="Tancar">✕</button><div class="in" id="sheetIn"></div></div>
+<div class="sheet vlb" id="vlb" role="dialog" aria-modal="true" aria-label="Aftermovie"><button class="xb" data-close aria-label="Tancar">✕</button><video id="vlbv" src="hero2.mp4" controls playsinline loop></video></div>
 <div class="veil" id="veil"></div>
-<aside class="bag" id="bag" aria-hidden="true" aria-label="Cistella"><header><h3 data-t="bg">Cistella</h3><button class="x" id="bagx" aria-label="Tancar">✕</button></header><ul id="bagl"></ul><footer><div class="tot"><span>Total</span><span id="bagt">0 €</span></div><button class="btn y" style="justify-content:center" id="pay" data-t="pay">Pagar</button><small class="mute" style="text-align:center" data-t="payN">Pagament segur amb targeta (pasarel·la a configurar)</small></footer></aside>
+<aside class="bag" id="bag" aria-hidden="true" aria-label="Cistella"><header><h3 data-t="bg">Cistella</h3><button class="bx" id="bagx" aria-label="Tancar">✕</button></header><ul id="bagl"></ul><footer><div class="tot"><span>Total</span><span id="bagt">0 €</span></div><button class="tk r" id="pay" style="justify-content:stretch"><span style="flex:1;justify-content:center" data-t="pay">Pagar</span><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></button><small style="text-align:center;color:var(--ink);opacity:.7" data-t="payN">Pagament segur amb targeta (passarel·la a configurar)</small></footer></aside>
 <div class="toast" id="toast" role="status"></div>
 
 <div class="dock" id="dock" role="navigation" aria-label="Accessos ràpids">
- <a href="#festes" data-s="festes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="2.5"/></svg><span data-t="n1">Festes</span></a>
- <a href="#arxiu" data-s="arxiu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 15 5-4 4 3 3-2 6 4"/></svg><span data-t="n2">Arxiu</span></a>
- <a href="#espai" data-s="espai"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 10 12 4l9 6v10H3Z"/><path d="M9 20v-6h6v6"/></svg><span data-t="n3">L'espai</span></a>
- <a href="#socis" data-s="socis"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M7 15h4"/></svg><span data-t="dS">Socis</span></a>
- <a href="#app" data-s="app"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="7" y="3" width="10" height="18" rx="3"/><path d="M11 18h2"/></svg><span>App</span></a>
+ <a href="#festes" data-s="festes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 8a2 2 0 0 0 0 4v4h18v-4a2 2 0 0 1 0-4V4H3Z"/></svg><span data-t="n1">Festes</span></a>
+ <a href="#qui" data-s="qui"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="2"/></svg><span>DJs</span></a>
+ <a href="#espai" data-s="espai"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 10 12 4l9 6v10H3Z"/></svg><span data-t="n3">L'espai</span></a>
+ <a href="#socis" data-s="socis"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M7 15h4"/></svg><span data-t="dS">Socis</span></a>
+ <a href="#app" data-s="app"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="7" y="3" width="10" height="18" rx="3"/></svg><span>App</span></a>
 </div>
 
 <script>
 const RM=matchMedia('(prefers-reduced-motion: reduce)').matches,$=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 const vib=()=>{try{navigator.vibrate&&navigator.vibrate(8)}catch(_){}};
 let L='va';
-/* ---------- i18n ---------- */
 const T={
-es:{n1:'Fiestas',n2:'Archivo',n3:'El espacio',n4:'Hazte socio',n5:'App',n6:'Tienda',cta:'Hazte socio',hint:'Mueve la luz para encontrar el escondite',h1:'Un lugar donde esconderte y ser libre.',h1p:'Asociación cultural musical. Keep it underground, València.',hbtn:'Próxima fiesta · 31 dic',nx:'Próxima fecha',nxs:'Nochevieja en Black Box y Overdrive',dd:'días',hh:'horas',mm:'min',fT:'Próximas fiestas',fL:'Dos salas, dos sonidos. Elige tu sala y mira quién pincha.',tA:'Apertura',tB:'Entradas',tBv:'Los socios tienen precio reducido',tC:'Quiero mi carnet',tD:'Añadir al calendario',u1:'Nueva temporada · fechas muy pronto',u2t:'Avísame',u2:'Recibe las fechas antes que nadie',u2b:'Socios',aT:'Archivo 2026',aL:'Todas las noches de este año, sala por sala. Abre una fecha para ver el line-up.',am:'Aftermovie',eT:'Alquila el espacio',eL:'Salas polivalentes para ensayos, grabaciones, exposiciones, clases y eventos, con rocódromo y zona exterior. Elige lo que necesitas:',c1:'Quién',c1v:'Socios, colectivos y proyectos culturales',c2:'Reserva',c2v:'Con solicitud previa y confirmación por escrito',c3:'Normas',c3v:'Respeto, cuidado del espacio y horarios acordados',eF:'Solicitud',eN:'Aún no has elegido ningún uso',lN:'Nombre o colectivo *',lE:'Correo *',lD:'Fecha',lP:'Personas aprox.',lM:'Cuéntanos el proyecto',eS:'Enviar solicitud',sT:'Hazte socio',sL:'El Amagatall es una asociación: las fiestas existen porque hay socios. Date de alta en un minuto y recibe tu carnet digital.',p1:'Carnet digital con QR único para entrar más rápido',p2:'Precio reducido en todas las fiestas (ej. 15 € socios / 20 € no socios en Techno Arts)',p3:'Descuentos en merch y talleres',p4:'Fechas y preventa antes que nadie',cS:'Socio/a',cV:'Válido hasta',cQ:'Enseña este QR en la puerta',fl:'Girar el carnet',s1:'1 · Tus datos',lN2:'Nombre y apellidos *',lB:'Fecha de nacimiento *',s2:'2 · Elige la cuota',pa:'Anual',pas:'Un pago, todo el año',pr:'Renovación',prs:'Ya eras socio en la base antigua',pq:'El importe y el pago online se configuran con la asociación.',s3:'3 · Confirma',lg:'Acepto los estatutos, las normas de convivencia y la política de privacidad de la asociación.',lg2:'Quiero recibir las fechas por correo.',bk:'Atrás',nxb:'Continuar',apT:'Appmagatall',apL:'La asociación, en el bolsillo. Socios, puerta, staff y cuentas en una sola app. Toca cada módulo y pruébala en el móvil.',m1:'Carnet y socios',m1s:'QR único, cuotas y beneficios',m2:'App Puerta',m2s:'Busca por nombre, DNI o QR · modo Live',m3:'Eventos y staff',m3s:'Line-up, turnos y checklist',m4:'Economía',m4s:'Ingresos, gastos y Excel para gestoría',m5:'Comunidad',m5s:'Tablón de anuncios y agenda',a1:'Cuota 2027',a1s:'Renovación automática · enero',a2:'Tus beneficios',a2t:'Talleres',a3:'¡Felicidades! 🎂',a3s:'Correo automático con una consumición de regalo el día de tu cumpleaños.',b1:'Staff y turnos',b1a:'Puerta',b1b:'Sonido',k1:'Ingresos 2026',k2:'Balance',k3:'Por evento',k4:'Ingresos',k5:'Gastos',k6:'Ticket escaneado',k7:'Exportar a Excel para la gestoría',c5a:'Buscamos VJ para la próxima',c5b:'Asamblea de socios el 15 de diciembre',c5c:'Inscripciones abiertas: taller de DJ con vinilo',sc:'Apunta al QR del carnet…',dn:'Prototipo interactivo con datos de demostración.',bT:'Tienda',bL:'Merch de la asociación. Cada compra ayuda a mantener el espacio abierto.',bN:'Tienda de ejemplo para la propuesta: productos y precios orientativos.',oT:'Colabora',oL:'¿DJ, VJ, artista, colectivo o tallerista? Envíanos tu propuesta y hablamos.',oR:'Qué haces *',oR1:'Artista / expo',oR2:'Taller',oR3:'Colectivo / fiesta',oLk:'Enlace (SoundCloud, Instagram…) *',oS:'Enviar propuesta',ftL:'Asociación Cultural Musical Amagatall d’Hilari. La ubicación se envía a los socios.',ft1:'Fiestas',fP:'Próximas',ft2:'Asociación',ft3:'Contacto',ft4:'Mensaje directo',bg:'Cesta',pay:'Pagar',payN:'Pago seguro con tarjeta (pasarela a configurar)',dS:'Socios'},
-en:{n1:'Parties',n2:'Archive',n3:'The space',n4:'Join',n5:'App',n6:'Shop',cta:'Become a member',hint:'Move the light to find the hideout',h1:'A place to hide and be free.',h1p:'Cultural music association. Keep it underground, València.',hbtn:'Next party · 31 Dec',nx:'Next date',nxs:"New Year's Eve in Black Box and Overdrive",dd:'days',hh:'hours',mm:'min',fT:'Upcoming parties',fL:'Two rooms, two sounds. Pick your room and see who is playing.',tA:'Doors',tB:'Tickets',tBv:'Members pay less',tC:'Get my card',tD:'Add to calendar',u1:'New season · dates soon',u2t:'Notify me',u2:'Get the dates before anyone else',u2b:'Members',aT:'Archive 2026',aL:'Every night this year, room by room. Open a date to see the line-up.',am:'Aftermovie',eT:'Rent the space',eL:'Multi-purpose rooms for rehearsals, recordings, exhibitions, classes and events, with a climbing wall and outdoor area. Choose what you need:',c1:'Who',c1v:'Members, collectives and cultural projects',c2:'Booking',c2v:'By request, confirmed in writing',c3:'Rules',c3v:'Respect, care for the space and agreed hours',eF:'Request',eN:'No use selected yet',lN:'Name or collective *',lE:'Email *',lD:'Date',lP:'People (approx.)',lM:'Tell us about the project',eS:'Send request',sT:'Become a member',sL:'Amagatall is an association: the parties exist because of its members. Sign up in a minute and get your digital card.',p1:'Digital card with a unique QR for faster entry',p2:'Lower prices at every party (e.g. €15 members / €20 non-members at Techno Arts)',p3:'Discounts on merch and workshops',p4:'Dates and presale before anyone else',cS:'Member',cV:'Valid until',cQ:'Show this QR at the door',fl:'Flip the card',s1:'1 · Your details',lN2:'Full name *',lB:'Date of birth *',s2:'2 · Choose your fee',pa:'Yearly',pas:'One payment, all year',pr:'Renewal',prs:'You were already a member',pq:'Amount and online payment are set up with the association.',s3:'3 · Confirm',lg:"I accept the association's statutes, house rules and privacy policy.",lg2:'Email me the dates.',bk:'Back',nxb:'Continue',apT:'Appmagatall',apL:'The association in your pocket. Members, door, staff and accounts in one app. Tap each module and try it on the phone.',m1:'Card & members',m1s:'Unique QR, fees and perks',m2:'Door app',m2s:'Search by name, ID or QR · Live mode',m3:'Events & staff',m3s:'Line-up, shifts and checklist',m4:'Finances',m4s:'Income, expenses and Excel export',m5:'Community',m5s:'Notice board and agenda',a1:'2027 fee',a1s:'Auto-renews · January',a2:'Your perks',a2t:'Workshops',a3:'Happy birthday! 🎂',a3s:'Automatic email with a free drink on your birthday.',b1:'Staff & shifts',b1a:'Door',b1b:'Sound',k1:'Income 2026',k2:'Balance',k3:'Per event',k4:'Income',k5:'Expenses',k6:'Scanned receipt',k7:'Export to Excel for the accountant',c5a:'Looking for a VJ for the next one',c5b:'Members assembly on 15 December',c5c:'Sign-ups open: vinyl DJ workshop',sc:'Point at the card QR…',dn:'Interactive prototype with demo data.',bT:'Shop',bL:'Association merch. Every purchase helps keep the space open.',bN:'Sample shop for the proposal: products and prices are indicative.',oT:'Collaborate',oL:'DJ, VJ, artist, collective or workshop host? Send us your proposal.',oR:'What you do *',oR1:'Artist / exhibition',oR2:'Workshop',oR3:'Collective / party',oLk:'Link (SoundCloud, Instagram…) *',oS:'Send proposal',ftL:"Amagatall d'Hilari Cultural Music Association. The location is sent to members.",ft1:'Parties',fP:'Upcoming',ft2:'Association',ft3:'Contact',ft4:'Direct message',bg:'Bag',pay:'Pay',payN:'Secure card payment (gateway to be set up)',dS:'Members'}};
-const VA={};$$('[data-t]').forEach(e=>{VA[e.dataset.t]=VA[e.dataset.t]||e.textContent});T.va=VA;
+es:{n1:'Fiestas',n3:'El espacio',n6:'Tienda',n7:'Quién pincha',dS:'Socios',cta:'Hazte socio',h1:'Un lugar donde esconderte y ser libre',h1p:'Asociación cultural musical. Keep it underground, València.',hbtn:'Próxima fiesta · 31 dic',nx:'Próxima fecha',dd:'días',qT:'Quién pincha',qS:'Residentes y colectivos',q1:'Nochevieja 2026',q2:'Residentes de la casa',qL:'Colectivos de València que hacen posible cada noche, sala por sala.',qB:'Todas las fiestas',spT:'Dos salas, una noche',spL:'Arrastra la línea: a la izquierda, el Black Box. A la derecha, el Overdrive.',tC:'Quiero mi carnet',fT:'Fiestas',fA:'Todas',fN:'Próximas',fP2:'Archivo 2026',pT:'Fotos de la última noche',eT:'Alquila el espacio',eL:'Salas polivalentes para ensayos, grabaciones, exposiciones, clases y eventos, con rocódromo y zona exterior. Elige lo que necesitas:',c1:'Quién',c1v:'Socios, colectivos y proyectos culturales',c2:'Reserva',c2v:'Con solicitud previa y confirmación por escrito',c3:'Normas',c3v:'Respeto, cuidado del espacio y horarios acordados',eF:'Solicitud',lN:'Nombre o colectivo *',lE:'Correo *',lD:'Fecha',lP:'Personas aprox.',lM:'Cuéntanos el proyecto',eS:'Enviar solicitud',sT:'Hazte socio',sL:'El Amagatall es una asociación: las fiestas existen porque hay socios. Date de alta en un minuto y recibe tu carnet digital.',p1:'Carnet digital con QR único para entrar más rápido',p2:'Precio reducido en todas las fiestas (ej. 15 € socios / 20 € no socios en Techno Arts)',p3:'Descuentos en merch y talleres',p4:'Fechas y preventa antes que nadie',cS:'Socio/a',cV:'Válido hasta',cQ:'Enseña este QR en la puerta',fl:'Girar el carnet',s1:'1 · Tus datos',lN2:'Nombre y apellidos *',lB:'Fecha de nacimiento *',s2:'2 · Elige la cuota',pa:'Anual',pas:'Un pago, todo el año',pr:'Renovación',prs:'Ya eras socio en la base antigua',pq:'El importe y el pago online se configuran con la asociación.',s3:'3 · Confirma',lg:'Acepto los estatutos, las normas de convivencia y la política de privacidad de la asociación.',lg2:'Quiero recibir las fechas por correo.',bk:'Atrás',nxb:'Continuar',apL:'La asociación, en el bolsillo. Socios, puerta, staff y cuentas en una sola app. Toca cada módulo y pruébala en el móvil.',m1:'Carnet y socios',m1s:'QR único, cuotas y beneficios',m2:'App Puerta',m2s:'Busca por nombre, DNI o QR · modo Live',m3:'Eventos y staff',m3s:'Line-up, turnos y checklist',m4:'Economía',m4s:'Ingresos, gastos y Excel para gestoría',m5:'Comunidad',m5s:'Tablón de anuncios y agenda',a1:'Cuota 2027',a1s:'Renovación automática · enero',a2:'Tus beneficios',a2t:'Talleres',a3:'¡Felicidades! 🎂',a3s:'Correo automático con una consumición de regalo el día de tu cumpleaños.',b1:'Staff y turnos',b1a:'Puerta',b1b:'Sonido',k1:'Ingresos 2026',k2:'Balance',k3:'Por evento',k4:'Ingresos',k5:'Gastos',k6:'Ticket escaneado',k7:'Exportar a Excel para la gestoría',c5a:'Buscamos VJ para la próxima',c5b:'Asamblea de socios el 15 de diciembre',c5c:'Inscripciones abiertas: taller de DJ con vinilo',sc:'Apunta al QR del carnet…',dn:'Prototipo interactivo con datos de demostración.',bT:'Tienda',bN:'Tienda de ejemplo para la propuesta: productos y precios orientativos.',oT:'Colabora',oL:'¿DJ, VJ, artista, colectivo o tallerista? Envíanos tu propuesta y hablamos.',oR:'Qué haces *',oR1:'Artista / expo',oR2:'Taller',oR3:'Colectivo / fiesta',oLk:'Enlace (SoundCloud, Instagram…) *',oS:'Enviar propuesta',stT:'Para fiestas. O para comunidad. O ambas.',stP:"Amagatall d'Hilari es una asociación cultural musical de València: dos salas, rocódromo, talleres y una comunidad de socios que mantiene viva la escena underground.",ftL:'La ubicación se envía a los socios',bg:'Cesta',pay:'Pagar',payN:'Pago seguro con tarjeta (pasarela a configurar)'},
+en:{n1:'Parties',n3:'The space',n6:'Shop',n7:'Line-up',dS:'Members',cta:'Become a member',h1:'A place to hide and be free',h1p:'Cultural music association. Keep it underground, València.',hbtn:'Next party · 31 Dec',nx:'Next date',dd:'days',qT:'Who plays',qS:'Residents & collectives',q1:"New Year's Eve 2026",q2:'House residents',qL:'València collectives that make every night happen, room by room.',qB:'All parties',spT:'Two rooms, one night',spL:'Drag the line: Black Box on the left, Overdrive on the right.',tC:'Get my card',fT:'Parties',fA:'All',fN:'Upcoming',fP2:'Archive 2026',pT:'Photos from the last night',eT:'Rent the space',eL:'Multi-purpose rooms for rehearsals, recordings, exhibitions, classes and events, with a climbing wall and outdoor area. Choose what you need:',c1:'Who',c1v:'Members, collectives and cultural projects',c2:'Booking',c2v:'By request, confirmed in writing',c3:'Rules',c3v:'Respect, care for the space and agreed hours',eF:'Request',lN:'Name or collective *',lE:'Email *',lD:'Date',lP:'People (approx.)',lM:'Tell us about the project',eS:'Send request',sT:'Become a member',sL:'Amagatall is an association: the parties exist because of its members. Sign up in a minute and get your digital card.',p1:'Digital card with a unique QR for faster entry',p2:'Lower prices at every party (e.g. €15 members / €20 non-members at Techno Arts)',p3:'Discounts on merch and workshops',p4:'Dates and presale before anyone else',cS:'Member',cV:'Valid until',cQ:'Show this QR at the door',fl:'Flip the card',s1:'1 · Your details',lN2:'Full name *',lB:'Date of birth *',s2:'2 · Choose your fee',pa:'Yearly',pas:'One payment, all year',pr:'Renewal',prs:'You were already a member',pq:'Amount and online payment are set up with the association.',s3:'3 · Confirm',lg:"I accept the association's statutes, house rules and privacy policy.",lg2:'Email me the dates.',bk:'Back',nxb:'Continue',apL:'The association in your pocket. Members, door, staff and accounts in one app. Tap each module and try it on the phone.',m1:'Card & members',m1s:'Unique QR, fees and perks',m2:'Door app',m2s:'Search by name, ID or QR · Live mode',m3:'Events & staff',m3s:'Line-up, shifts and checklist',m4:'Finances',m4s:'Income, expenses and Excel export',m5:'Community',m5s:'Notice board and agenda',a1:'2027 fee',a1s:'Auto-renews · January',a2:'Your perks',a2t:'Workshops',a3:'Happy birthday! 🎂',a3s:'Automatic email with a free drink on your birthday.',b1:'Staff & shifts',b1a:'Door',b1b:'Sound',k1:'Income 2026',k2:'Balance',k3:'Per event',k4:'Income',k5:'Expenses',k6:'Scanned receipt',k7:'Export to Excel for the accountant',c5a:'Looking for a VJ for the next one',c5b:'Members assembly on 15 December',c5c:'Sign-ups open: vinyl DJ workshop',sc:'Point at the card QR…',dn:'Interactive prototype with demo data.',bT:'Shop',bN:'Sample shop for the proposal: products and prices are indicative.',oT:'Collaborate',oL:'DJ, VJ, artist, collective or workshop host? Send us your proposal.',oR:'What you do *',oR1:'Artist / exhibition',oR2:'Workshop',oR3:'Collective / party',oLk:'Link (SoundCloud, Instagram…) *',oS:'Send proposal',stT:'For parties. Or community. Or both.',stP:"Amagatall d'Hilari is a cultural music association in València: two rooms, a climbing wall, workshops and a members' community keeping the underground scene alive.",ftL:'The location is sent to members',bg:'Bag',pay:'Pay',payN:'Secure card payment (gateway to be set up)'}};
+const VA={};$$('[data-t]').forEach(e=>{if(!(e.dataset.t in VA))VA[e.dataset.t]=e.textContent});T.va=VA;
 const t=k=>(T[L]&&T[L][k])||VA[k]||k;
-function setL(l){L=l;document.documentElement.lang=l==='va'?'ca':l;$$('[data-t]').forEach(e=>{const v=t(e.dataset.t);if(v)e.textContent=v});$$('.lang button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.l===l));renderRoom();renderEv();renderUses();renderProds();renderChk();try{localStorage.setItem('amg-l',l)}catch(_){}}
+function setL(l){L=l;document.documentElement.lang=l==='va'?'ca':l;$$('[data-t]').forEach(e=>{e.textContent=t(e.dataset.t)});$$('.lang button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.l===l));renderEv();renderUses();renderProds();renderChk();renderBag();rp&&rp();try{localStorage.setItem('amg-l',l)}catch(_){}}
 $$('.lang button').forEach(b=>b.onclick=()=>{setL(b.dataset.l);vib()});
+const MS={err:{va:'Revisa els camps marcats.',es:'Revisa los campos marcados.',en:'Check the highlighted fields.'},sp:{va:'Sol·licitud enviada. Et contestem per correu en 48 h.',es:'Solicitud enviada. Te contestamos por correo en 48 h.',en:'Request sent. We will reply within 48 h.'},co:{va:'Proposta enviada. Gràcies!',es:'Propuesta enviada. ¡Gracias!',en:'Proposal sent. Thanks!'},so:{va:'Benvingut/da a l’Amagatall! El teu carnet ja està actiu.',es:'¡Bienvenido/a al Amagatall! Tu carnet ya está activo.',en:'Welcome to Amagatall! Your card is active.'},ad:{va:'Afegit a la cistella',es:'Añadido a la cesta',en:'Added to bag'},xl:{va:'Excel descarregat',es:'Excel descargado',en:'Excel downloaded'},py:{va:'Demo: ací s’obriria la passarel·la de pagament',es:'Demo: aquí se abriría la pasarela de pago',en:'Demo: the payment gateway would open here'},sz:{va:'Tria una talla',es:'Elige una talla',en:'Pick a size'},act:{va:'Activar el meu carnet',es:'Activar mi carnet',en:'Activate my card'},emp:{va:'Encara no has triat cap ús',es:'Aún no has elegido ningún uso',en:'No use selected yet'},nx:{va:'Pròxima',es:'Próxima',en:'Next'},ent:{va:'Entrar',es:'Entrar',en:'Check in'},act2:{va:'Soci actiu',es:'Socio activo',en:'Active member'},pen:{va:'Quota pendent',es:'Cuota pendiente',en:'Fee pending'},penT:{va:'Quota pendent: cobrar a la porta',es:'Cuota pendiente: cobrar en puerta',en:'Fee pending: charge at the door'},cal:{va:'Afegir al calendari',es:'Añadir al calendario',en:'Add to calendar'}};
+const m=k=>MS[k][L];
+const toast=x=>{const el=$('#toast');el.textContent=x;el.classList.add('on');clearTimeout(toast.t);toast.t=setTimeout(()=>el.classList.remove('on'),2600)};
 
-/* ---------- nav / progress / dock ---------- */
-const nav=$('#nav'),pr=$('#prog'),dock=$('#dock');let ly=scrollY;
-addEventListener('scroll',()=>{nav.classList.toggle('s',scrollY>40);pr.style.transform=`scaleX(${scrollY/(document.documentElement.scrollHeight-innerHeight)})`;const d=scrollY-ly;if(Math.abs(d)>8){dock.classList.toggle('hide',d>0&&scrollY>600);ly=scrollY}},{passive:true});
-const secIO=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){$$('.dock a,.nl a').forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id))}}),{rootMargin:'-45% 0px -50% 0px'});
-['festes','arxiu','espai','socis','app','botiga'].forEach(id=>secIO.observe(document.getElementById(id)));
+/* nav, progress, dock */
+const nav=$('#nav'),dock=$('#dock');let ly=scrollY;
+addEventListener('scroll',()=>{nav.classList.toggle('s',scrollY>innerHeight*.8);$('#prog').style.transform=`scaleX(${scrollY/(document.documentElement.scrollHeight-innerHeight)})`;const d=scrollY-ly;if(Math.abs(d)>8){dock.classList.toggle('hide',d>0&&scrollY>600);ly=scrollY}},{passive:true});
+const sio=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)$$('.dock a').forEach(a=>a.classList.toggle('on',a.dataset.s===e.target.id))}),{rootMargin:'-45% 0px -50% 0px'});
+['festes','qui','espai','socis','app'].forEach(id=>sio.observe(document.getElementById(id)));
 $$('.dock a').forEach(a=>a.addEventListener('click',vib));
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});$$('.rv').forEach(e=>io.observe(e));
-const toast=m=>{const el=$('#toast');el.textContent=m;el.classList.add('on');clearTimeout(toast.t);toast.t=setTimeout(()=>el.classList.remove('on'),2600)};
 
-/* ---------- hero spotlight ---------- */
-(function(){const h=$('.hero'),dk=$('#dark'),tc=$('#torch'),hint=$('#hint');let x=.5,y=.45,tx=.5,ty=.45,auto=true,r=0,R=Math.max(150,Math.min(innerWidth,innerHeight)*.24);let t0=performance.now();
- function set(px,py){tx=px;ty=py;auto=false;hint.style.opacity=0;clearTimeout(set.t);set.t=setTimeout(()=>auto=true,2600)}
- h.addEventListener('pointermove',e=>{const b=h.getBoundingClientRect();set((e.clientX-b.left)/b.width,(e.clientY-b.top)/b.height)});
- h.addEventListener('touchmove',e=>{const b=h.getBoundingClientRect(),p=e.touches[0];set((p.clientX-b.left)/b.width,(p.clientY-b.top)/b.height)},{passive:true});
- h.addEventListener('click',()=>{R=R*1.6;vib();setTimeout(()=>R=Math.max(150,Math.min(innerWidth,innerHeight)*.24),900)});
- function f(now){if(auto){const k=(now-t0)/1000;tx=.5+Math.sin(k*.55)*.3;ty=.42+Math.sin(k*.9)*.14}x+=(tx-x)*.09;y+=(ty-y)*.09;r+=(R-r)*.08;
-  const pr=r*(1+Math.sin(now/180)*.015);dk.style.setProperty('--x',x*100+'%');dk.style.setProperty('--y',y*100+'%');dk.style.setProperty('--r',pr+'px');tc.style.setProperty('--x',x*100+'%');tc.style.setProperty('--y',y*100+'%');requestAnimationFrame(f)}
- if(RM){dk.style.setProperty('--r','260px')}else requestAnimationFrame(f)})();
-
-/* ---------- countdown ---------- */
+/* hero: typed name + photo stack + eyes */
+(function(){const W=['BLACK BOX','OVERDRIVE','31·12·26','KEEP IT UNDERGROUND'],ph=$$('#hph .tint'),ds=$$('#hdots button'),el=$('#typed');let i=0,tm;
+ function type(w){el.textContent='';let k=0;clearInterval(type.t);type.t=setInterval(()=>{el.textContent=w.slice(0,++k);if(k>=w.length)clearInterval(type.t)},RM?0:70)}
+ function go(n){i=(n+ph.length)%ph.length;ph.forEach((p,k)=>p.classList.toggle('on',k===i));ds.forEach((d,k)=>{d.classList.remove('on');if(k===i){void d.offsetWidth;d.classList.add('on')}});type(W[(go.c=(go.c||0)+1)%W.length]);clearTimeout(tm);if(!RM)tm=setTimeout(()=>go(i+1),4200)}
+ ds.forEach((d,k)=>d.onclick=()=>{go(k);vib()});go(0);
+ let sx=null;$('.stack').addEventListener('touchstart',e=>sx=e.touches[0].clientX,{passive:true});$('.stack').addEventListener('touchend',e=>{if(sx===null)return;const d=e.changedTouches[0].clientX-sx;sx=null;if(Math.abs(d)>40){go(i+(d<0?1:-1));vib()}});
+ const eyes=$('#eyes'),pe=$$('.eyes b');
+ addEventListener('pointermove',e=>{const b=$('#buddy').getBoundingClientRect(),dx=(e.clientX-(b.left+b.width/2))/innerWidth,dy=(e.clientY-(b.top+b.height*.25))/innerHeight;eyes.style.transform=`translate(${dx*8}px,${dy*6}px)`;
+  pe.forEach(p=>{const r=p.getBoundingClientRect(),a=Math.atan2(e.clientY-(r.top+r.height/2),e.clientX-(r.left+r.width/2));p.style.setProperty('--ex',Math.cos(a)*8+'px');p.style.setProperty('--ey',Math.sin(a)*8+'px')})},{passive:true});
+ const mq=$('.mq');addEventListener('scroll',()=>{if(scrollY<innerHeight)mq.style.marginLeft=(-scrollY*.4)+'px'},{passive:true});
+})();
+/* countdown */
 (function(){const end=new Date('2026-12-31T23:30:00+01:00');function u(){let s=Math.max(0,(end-new Date())/1000);$('#cdd').textContent=Math.floor(s/86400);$('#cdh').textContent=String(Math.floor(s%86400/3600)).padStart(2,'0');$('#cdm').textContent=String(Math.floor(s%3600/60)).padStart(2,'0')}u();setInterval(u,30000)})();
 
-/* ---------- next party rooms ---------- */
-const ROOMS={bb:{n:'Black Box Room',g:'Hardtechno',l:[['APA','Hardtechno']]},od:{n:'Overdrive Room',g:'Drum & Bass',l:[['Residents & Friends','by Amagatall DnB']]}};let room='bb';
-function renderRoom(){const r=ROOMS[room];$('#room').innerHTML=`<h3 class="d" style="color:var(--${room})">${r.n}</h3><p class="g">${r.g}</p><ul>${r.l.map(x=>`<li><b>${x[0]}</b><span>${x[1]}</span></li>`).join('')}</ul>`;$('#room').style.animation='none';void $('#room').offsetWidth;$('#room').style.animation=''}
-$$('.rooms button').forEach(b=>b.onclick=()=>{room=b.dataset.r;$$('.rooms button').forEach(x=>x.setAttribute('aria-selected',x===b));renderRoom();vib()});
-$('#ics').onclick=()=>{const ics=['BEGIN:VCALENDAR','VERSION:2.0','BEGIN:VEVENT','DTSTART:20261231T223000Z','DTEND:20270101T060000Z',"SUMMARY:Amagatall d'Hilari · APA + Amagatall DnB",'END:VEVENT','END:VCALENDAR'].join('\r\n');const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([ics],{type:'text/calendar'}));a.download='amagatall-31des.ics';a.click();toast('📅 31·12')};
+/* split rooms (drag the tear) */
+(function(){const s=$('#sales'),kb=$('#knob');let k=50,drag=false;
+ function cp(){const pts=[];const n=24;for(let i=0;i<=n;i++){const y=i/n*100;const j=(i%2?1:-1)*(1.2+((i*37)%5)*.35);pts.push(`calc(${k}% + ${j}vw) ${y}%`)}return `polygon(${pts.join(',')},100% 100%,100% 0)`}
+ function set(v){k=Math.max(6,Math.min(94,v));s.style.setProperty('--k',k+'%');s.style.setProperty('--cp',cp());kb.setAttribute('aria-valuenow',Math.round(k))}
+ set(50);
+ const pos=e=>{const b=s.getBoundingClientRect();return((e.touches?e.touches[0].clientX:e.clientX)-b.left)/b.width*100};
+ kb.addEventListener('pointerdown',e=>{drag=true;kb.setPointerCapture(e.pointerId)});
+ kb.addEventListener('pointermove',e=>{if(drag)set(pos(e))});kb.addEventListener('pointerup',()=>{drag=false;vib()});
+ s.addEventListener('pointermove',e=>{if(!drag&&e.pointerType==='mouse'){/* gentle follow */set(k+(pos(e)-k)*.08)}});
+ kb.addEventListener('keydown',e=>{if(e.key==='ArrowLeft')set(k-5);if(e.key==='ArrowRight')set(k+5)});
+ if(!RM){let t0=performance.now(),seen=false;new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting&&!seen){seen=true;const st=performance.now();(function a(n){const p=Math.min(1,(n-st)/1600);set(50+Math.sin(p*Math.PI*2)*22*(1-p));if(p<1)requestAnimationFrame(a)})(st)}}),{threshold:.5}).observe(s)}
+})();
 
-/* ---------- crews marquee ---------- */
-(function(){const c=['Anguila Elektronika','SPB Soundsystem','Zerosound','Spartan Rave','Synaptik','MassKaos','Hard Expression','APA','Amagatall DnB','Techno Arts','SorollXpresion','CosmicUnity'];const h=c.map(x=>`<span>${x}</span>`).join('');$('#crews').innerHTML=h+h})();
-
-/* ---------- archive ---------- */
+/* events */
 const EV=[
- {d:'20 FEB',n:'SorollXpresion · Electropurgue',bb:'SorollXpresion (Hard-Techno)',od:'Electropurgue (Psytrance) by Alpo11 w/ Zerosound + CosmicUnity (Mur)',img:'am_prog.jpg'},
- {d:'17 ABR',n:'Spartan Rave · MassKaos',bb:'Spartan Rave + Ekualice + MassOver (Tekno + Techno)',od:'MassKaos + Amagatall DnB (DnB + Hardtek)',img:'v4.jpg'},
- {d:'5 JUN',n:'Synaptik Party · 3r aniversari',bb:'Synaptik Party (Tekno & hardtechno)',od:'Amagatall DnB',img:'v2.jpg'},
- {d:'31 JUL',n:'Spartan Rave · Amagatall DnB',bb:'Spartan Rave (Tekno & hardtechno)',od:'Amagatall DnB + MassKaos',img:'v5.jpg'},
- {d:'25 SET',n:'Techno Arts · +12H nonstop',bb:'2 rooms, naturalesa, rocòdrom, graffiti, stands, expo, activitats i jocs',od:'15 € socis · 20 € no socis',img:'am_sept.jpg'},
- {d:'30 OCT',n:'Anguila Elektronika',bb:'Anguila Elektronika (Hardtechno)',od:'Amagatall DnB',img:'v6.jpg'}];
-let evOn=4;
-function renderEv(){$('#ev').innerHTML=EV.map((e,i)=>`<li class="${i===evOn?'on':''}"><button aria-expanded="${i===evOn}" data-i="${i}"><span class="dt">${e.d}</span><span class="nm"><b>${e.n}</b><span>Black Box · Overdrive</span></span><span class="pl" aria-hidden="true">+</span></button><div class="ex"><div><p><span><b>Black Box Room</b> — ${e.bb}</span><span><b>Overdrive Room</b> — ${e.od}</span></p></div></div></li>`).join('');
- $$('#ev button').forEach(b=>b.onclick=()=>{const i=+b.dataset.i;evOn=evOn===i?-1:i;renderEv();if(evOn>=0)setFly(EV[i].img);vib()})}
-function setFly(src){const f=$('#fly'),o=f.querySelector('img');if(o.getAttribute('src')===src)return;const n=new Image();n.src=src;n.alt='';n.style.opacity=0;n.style.transform='scale(1.06)';f.appendChild(n);requestAnimationFrame(()=>requestAnimationFrame(()=>{n.style.opacity=1;n.style.transform='none'}));setTimeout(()=>o.remove(),600)}
-setFly(EV[evOn].img);
-const av=$('#after');$('#pp').onclick=()=>{if(av.paused){av.play();$('#pp i').textContent='❚❚'}else{av.pause();$('#pp i').textContent='▶'}};
-new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting&&!av.paused){av.pause();$('#pp i').textContent='▶'}})).observe(av);
-const G=['ph_dance.jpg','ph_group.jpg','ph_toast.jpg','ph_hug.jpg','ph_green.jpg','ph_trike.jpg','v0.jpg','v3.jpg'];let gi=0;
-$('#gal').innerHTML=G.slice(0,4).map((s,i)=>`<button data-i="${i}" aria-label="Obrir foto ${i+1}"><img src="${s}" alt="" loading="lazy">${i===3?`<span class="more">+${G.length-3}</span>`:''}</button>`).join('');
-const lb=$('#lb');function lbo(i){gi=(i+G.length)%G.length;$('#lbi').src=G[gi];$('#lbc').textContent=(gi+1)+' / '+G.length;lb.classList.add('on')}
-$$('#gal button').forEach(b=>b.onclick=()=>lbo(+b.dataset.i));$('#lbx').onclick=()=>lb.classList.remove('on');$('#lbp').onclick=()=>lbo(gi-1);$('#lbn').onclick=()=>lbo(gi+1);
-lb.addEventListener('click',e=>{if(e.target===lb)lb.classList.remove('on')});
-(function(){let sx=null;lb.addEventListener('touchstart',e=>sx=e.touches[0].clientX,{passive:true});lb.addEventListener('touchend',e=>{if(sx===null)return;const d=e.changedTouches[0].clientX-sx;sx=null;if(Math.abs(d)>50)lbo(gi+(d<0?1:-1))})})();
-addEventListener('keydown',e=>{if(!lb.classList.contains('on'))return;if(e.key==='Escape')lb.classList.remove('on');if(e.key==='ArrowRight')lbo(gi+1);if(e.key==='ArrowLeft')lbo(gi-1)});
+ {d:'20 feb 2026',n:'SorollXpresion · Electropurgue',bb:'SorollXpresion (Hard-Techno)',od:'Electropurgue (Psytrance) by Alpo11 w/ Zerosound + CosmicUnity (Mur)',img:'v8.jpg'},
+ {d:'17 abr 2026',n:'Spartan Rave · MassKaos',bb:'Spartan Rave + Ekualice + MassOver (Tekno + Techno)',od:'MassKaos + Amagatall DnB (DnB + Hardtek)',img:'v6.jpg'},
+ {d:'5 jun 2026',n:'Synaptik Party · 3r aniversari',bb:'Synaptik Party (Tekno & hardtechno)',od:'Amagatall DnB',img:'v2.jpg'},
+ {d:'31 jul 2026',n:'Spartan Rave · Amagatall DnB',bb:'Spartan Rave (Tekno & hardtechno)',od:'Amagatall DnB + MassKaos',img:'v5.jpg'},
+ {d:'25 set 2026',n:'Techno Arts · +12H nonstop',bb:'2 rooms, naturalesa, rocòdrom, graffiti, stands, expo, activitats i jocs',od:'15 € socis · 20 € no socis',img:'am_sept.jpg',raw:1},
+ {d:'30 oct 2026',n:'Anguila Elektronika',bb:'Anguila Elektronika (Hardtechno)',od:'Amagatall DnB',img:'v3.jpg'},
+ {d:'31 des 2026',n:"Cap d'any · APA + Amagatall DnB",bb:'APA (Hardtechno)',od:'Residents & Friends by Amagatall DnB',img:'ph_toast.jpg',next:1}];
+let evf='all';
+function renderEv(){const list=EV.map((e,i)=>({...e,i})).filter(e=>evf==='all'||(evf==='next'?e.next:!e.next)).sort((a,b)=>(b.next||0)-(a.next||0));
+ $('#eg').innerHTML=list.map(e=>`<button class="ec ${e.next?'nx':''}" data-i="${e.i}"><div class="${e.raw?'':'tint'}" style="${e.raw?'aspect-ratio:4/5;position:relative;overflow:hidden':''}"><img src="${e.img}" alt="" loading="lazy" style="${e.raw?'width:100%;height:100%;object-fit:cover':''}"><span class="dt">${e.next?m('nx')+' · ':''}${e.d}</span></div><h3>${e.n}</h3><p>Black Box · Overdrive</p></button>`).join('');
+ $$('.ec').forEach(b=>b.onclick=()=>openEv(+b.dataset.i))}
+$$('.filter button').forEach(b=>b.onclick=()=>{evf=b.dataset.f;$$('.filter button').forEach(x=>x.setAttribute('aria-pressed',x===b));renderEv();vib()});
+function openEv(i){const e=EV[i];$('#sheetIn').innerHTML=`<img src="${e.raw?e.img:'am_prog.jpg'}" alt="Cartell"><div class="tx"><span class="mono">${e.d}</span><h3>${e.n}</h3><div class="rm"><b>Black Box Room</b><p>${e.bb}</p></div><div class="rm od"><b>Overdrive Room</b><p>${e.od}</p></div>${e.next?`<button class="tk r" id="ics"><span>${m('cal')}</span><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="5" width="16" height="15"/><path d="M4 10h16M9 3v4M15 3v4"/></svg></i></button>`:''}</div>`;
+ $('#sheet').classList.add('on');vib();const ic=$('#ics');if(ic)ic.onclick=()=>{const s=['BEGIN:VCALENDAR','VERSION:2.0','BEGIN:VEVENT','DTSTART:20261231T223000Z','DTEND:20270101T060000Z',"SUMMARY:Amagatall d'Hilari · APA + Amagatall DnB",'END:VEVENT','END:VCALENDAR'].join('\r\n');const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([s],{type:'text/calendar'}));a.download='amagatall-31des.ics';a.click()}}
+$$('.pc').forEach(c=>c.onclick=()=>openEv(+c.dataset.ev));
+$$('[data-close]').forEach(b=>b.onclick=()=>{b.parentElement.classList.remove('on');$('#vlbv').pause()});
+$$('.sheet').forEach(s=>s.addEventListener('click',e=>{if(e.target===s){s.classList.remove('on');$('#vlbv').pause()}}));
+addEventListener('keydown',e=>{if(e.key==='Escape'){$$('.sheet').forEach(s=>s.classList.remove('on'));$('#vlbv').pause();openBag(false)}});
+$('#play').onclick=()=>{$('#vlb').classList.add('on');$('#vlbv').play();vib()};
 
-/* ---------- space ---------- */
+/* polaroids */
+(function(){const P=[['ph_dance.jpg','Pista','--t1'],['ph_group.jpg','La colla','--t2'],['ph_toast.jpg','Brindis','--t3'],['ph_hug.jpg','Abraçada','--t4'],['ph_green.jpg','Neó','--t1'],['ph_trike.jpg','Jardí','--t3'],['v4.jpg','Cabina','--t2'],['v0.jpg','Black Box','--t4']];
+ const h=P.map(p=>`<figure class="pd" style="--tp:var(${p[2]})"><img src="${p[0]}" alt="" loading="lazy"><b>${p[1]}</b><small>Amagatall '26</small></figure>`).join('');$('#pt').innerHTML=h+h})();
+
+/* video ring follows pointer */
+(function(){const r=$('#ring'),v=$('.vc');v.addEventListener('pointermove',e=>{const b=v.getBoundingClientRect();r.style.transform=`translate(${(e.clientX-b.left-b.width/2)*.06}px,${(e.clientY-b.top-b.height/2)*.06}px)`});v.addEventListener('pointerleave',()=>r.style.transform='')})();
+
+/* space */
 const USES={va:['Assajos','Gravacions','Exposicions','Classes i tallers','Rocòdrom','Festa privada'],es:['Ensayos','Grabaciones','Exposiciones','Clases y talleres','Rocódromo','Fiesta privada'],en:['Rehearsals','Recordings','Exhibitions','Classes & workshops','Climbing wall','Private party']};
-const UI=['<path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/>','<rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10a7 7 0 0 0 14 0M12 17v5"/>','<rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/>','<path d="M2 7l10-4 10 4-10 4Z"/><path d="M6 9v5c3 2 9 2 12 0V9"/>','<path d="M4 21 9 4l4 7 3-4 4 14"/>','<path d="M12 3v3M5 7l2 2M19 7l-2 2M8 21l4-11 4 11M6 21h12"/>'];
+const UI=['<path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/>','<rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10a7 7 0 0 0 14 0M12 17v5"/>','<rect x="3" y="3" width="18" height="18"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/>','<path d="M2 7l10-4 10 4-10 4Z"/><path d="M6 9v5c3 2 9 2 12 0V9"/>','<path d="M4 21 9 4l4 7 3-4 4 14"/>','<path d="M12 3v3M5 7l2 2M19 7l-2 2M8 21l4-11 4 11M6 21h12"/>'];
 const picked=new Set();
-function renderUses(){const u=USES[L];$('#uses').innerHTML=u.map((n,i)=>`<button type="button" class="use" aria-pressed="${picked.has(i)}" data-i="${i}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">${UI[i]}</svg><b>${n}</b></button>`).join('');
- $$('.use').forEach(b=>b.onclick=()=>{const i=+b.dataset.i;picked.has(i)?picked.delete(i):picked.add(i);b.setAttribute('aria-pressed',picked.has(i));renderChosen();vib()});renderChosen()}
-function renderChosen(){const u=USES[L];$('#chosen').innerHTML=picked.size?[...picked].map(i=>`<span>${u[i]}</span>`).join(''):`<em>${t('eN')}</em>`}
-function val(f,names){let ok=true;names.forEach(n=>{const el=f.elements[n];const bad=el.type==='checkbox'?!el.checked:(!el.value.trim()||(el.type==='email'&&!/^\S+@\S+\.\S+$/.test(el.value)));el.setAttribute('aria-invalid',bad);if(bad)ok=false});return ok}
-const MS={err:{va:'Revisa els camps marcats en roig.',es:'Revisa los campos marcados en rojo.',en:'Check the fields marked in red.'},sp:{va:'Sol·licitud enviada. Et contestem per correu en 48 h.',es:'Solicitud enviada. Te contestamos por correo en 48 h.',en:'Request sent. We will reply by email within 48 h.'},co:{va:'Proposta enviada. Gràcies per voler formar part!',es:'Propuesta enviada. ¡Gracias por querer formar parte!',en:'Proposal sent. Thanks for wanting to be part of it!'},so:{va:'Benvingut/da a l’Amagatall! El teu carnet ja està actiu.',es:'¡Bienvenido/a al Amagatall! Tu carnet ya está activo.',en:'Welcome to Amagatall! Your card is now active.'},ad:{va:'Afegit a la cistella',es:'Añadido a la cesta',en:'Added to bag'},xl:{va:'amagatall-2026.csv descarregat',es:'amagatall-2026.csv descargado',en:'amagatall-2026.csv downloaded'},py:{va:'Demo: ací s’obriria la passarel·la de pagament',es:'Demo: aquí se abriría la pasarela de pago',en:'Demo: the payment gateway would open here'},sz:{va:'Tria una talla',es:'Elige una talla',en:'Pick a size'}};
-const m=k=>MS[k][L];
-function msg(id,ok,txt){const e=$(id);e.className='msg on '+(ok?'ok':'er');e.textContent=txt}
+function renderUses(){$('#uses').innerHTML=USES[L].map((n,i)=>`<button type="button" class="use" aria-pressed="${picked.has(i)}" data-i="${i}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">${UI[i]}</svg>${n}</button>`).join('');
+ $$('.use').forEach(b=>b.onclick=()=>{const i=+b.dataset.i;picked.has(i)?picked.delete(i):picked.add(i);b.setAttribute('aria-pressed',picked.has(i));chosen();vib()});chosen()}
+function chosen(){$('#chosen').innerHTML=picked.size?[...picked].map(i=>`<span>${USES[L][i]}</span>`).join(''):`<em>${m('emp')}</em>`}
+function val(f,ns){let ok=true;ns.forEach(n=>{const el=f.elements[n];const bad=el.type==='checkbox'?!el.checked:(!el.value.trim()||(el.type==='email'&&!/^\S+@\S+\.\S+$/.test(el.value)));el.setAttribute('aria-invalid',bad);if(bad)ok=false});return ok}
+function msg(id,ok,x){const e=$(id);e.className='msg on '+(ok?'ok':'er');e.textContent=x}
 $('#fe').addEventListener('submit',e=>{e.preventDefault();if(!val(e.target,['n','e']))return msg('#feM',0,m('err'));msg('#feM',1,m('sp'));e.target.reset();picked.clear();renderUses();vib()});
 $('#fo').addEventListener('submit',e=>{e.preventDefault();if(!val(e.target,['n','r','l']))return msg('#foM',0,m('err'));msg('#foM',1,m('co'));e.target.reset();vib()});
 
-/* ---------- fake QR (visual) ---------- */
-function qr(cv,seed){const c=cv.getContext('2d'),N=29;let s=0;for(const ch of seed)s=(s*31+ch.charCodeAt(0))>>>0;const rnd=()=>(s=(s*1664525+1013904223)>>>0)/4294967296;c.fillStyle='#fff';c.fillRect(0,0,N,N);c.fillStyle='#120c18';
- for(let y=0;y<N;y++)for(let x=0;x<N;x++)if(rnd()>.52)c.fillRect(x,y,1,1);
- [[0,0],[N-7,0],[0,N-7]].forEach(([a,b])=>{c.fillStyle='#fff';c.fillRect(a-1<0?a:a-1,b-1<0?b:b-1,8,8);c.fillStyle='#120c18';c.fillRect(a,b,7,7);c.fillStyle='#fff';c.fillRect(a+1,b+1,5,5);c.fillStyle='#120c18';c.fillRect(a+2,b+2,3,3)})}
+/* fake QR (visual) */
+function qr(cv,seed){const c=cv.getContext('2d'),N=29;let s=0;for(const ch of seed)s=(s*31+ch.charCodeAt(0))>>>0;const r=()=>(s=(s*1664525+1013904223)>>>0)/4294967296;c.fillStyle='#fff';c.fillRect(0,0,N,N);c.fillStyle='#202020';
+ for(let y=0;y<N;y++)for(let x=0;x<N;x++)if(r()>.52)c.fillRect(x,y,1,1);
+ [[0,0],[N-7,0],[0,N-7]].forEach(([a,b])=>{c.fillStyle='#fff';c.fillRect(Math.max(0,a-1),Math.max(0,b-1),8,8);c.fillStyle='#202020';c.fillRect(a,b,7,7);c.fillStyle='#fff';c.fillRect(a+1,b+1,5,5);c.fillStyle='#ff0002';c.fillRect(a+2,b+2,3,3)})}
 qr($('#qr'),'amagatall');qr($('#qr2'),'laia-0412');
 
-/* ---------- socis form + card ---------- */
-(function(){const f=$('#fs'),st=$$('.stp'),bars=$$('.steps i');let s=0;const req=[['nom','dni','mail','nx'],[],['ok']];
- const card=$('#card');f.elements.nom.addEventListener('input',e=>{$('#cn').textContent=(e.target.value||'EL TEU NOM').toUpperCase().slice(0,22)});
- function go(n){s=n;st.forEach((x,i)=>x.classList.toggle('on',i===s));bars.forEach((b,i)=>b.classList.toggle('on',i<=s));$('#bk').style.visibility=s?'visible':'hidden';$('#nxb').textContent=s===2?(L==='en'?'Activate my card':L==='es'?'Activar mi carnet':'Activar el meu carnet'):t('nxb');$('#fsM').className='msg'}
- $('#bk').onclick=()=>go(s-1);
+/* socis */
+(function(){const f=$('#fs'),st=$$('.stp'),bars=$$('.steps i');let s=0;const req=[['nom','dni','mail','nx'],[],['ok']],card=$('#card');
+ f.elements.nom.addEventListener('input',e=>$('#cn').textContent=(e.target.value||'EL TEU NOM').toUpperCase().slice(0,22));
+ function go(n){s=n;st.forEach((x,i)=>x.classList.toggle('on',i===s));bars.forEach((b,i)=>b.classList.toggle('on',i<=s));$('#bk').style.visibility=s?'visible':'hidden';$('#nxbt').textContent=s===2?m('act'):t('nxb');$('#fsM').className='msg'}
+ window.goStep=go;$('#bk').onclick=()=>go(s-1);
  $$('.plan').forEach(p=>p.onclick=()=>{$$('.plan').forEach(x=>x.setAttribute('aria-pressed',x===p));vib()});
  f.addEventListener('submit',e=>{e.preventDefault();if(!val(f,req[s]))return msg('#fsM',0,m('err'));vib();if(s<2)return go(s+1);
-  const no=String(Math.floor(Math.random()*900)+100).padStart(4,'0');$('#cno').textContent=no;qr($('#qr'),f.elements.nom.value+no);msg('#fsM',1,m('so'));card.classList.add('flip');$('#card').scrollIntoView({behavior:RM?'auto':'smooth',block:'center'});setTimeout(()=>{f.reset();go(0)},4000)});
+  const no=String(Math.floor(Math.random()*900)+100).padStart(4,'0');$('#cno').textContent='Nº '+no;qr($('#qr'),f.elements.nom.value+no);msg('#fsM',1,m('so'));card.classList.add('flip');card.scrollIntoView({behavior:RM?'auto':'smooth',block:'center'});setTimeout(()=>{f.reset();go(0)},4000)});
  $('#flip').onclick=()=>{card.classList.toggle('flip');vib()};card.onclick=()=>card.classList.toggle('flip');
- card.addEventListener('pointermove',e=>{const b=card.getBoundingClientRect(),px=(e.clientX-b.left)/b.width,py=(e.clientY-b.top)/b.height;if(!card.classList.contains('flip')){card.style.transform=`rotateY(${(px-.5)*16}deg) rotateX(${(.5-py)*12}deg)`;card.querySelector('.front').style.setProperty('--gx',(px*160-80)+'%')}});
- card.addEventListener('pointerleave',()=>card.style.transform='');
-})();
+ card.addEventListener('pointermove',e=>{if(card.classList.contains('flip'))return;const b=card.getBoundingClientRect(),px=(e.clientX-b.left)/b.width,py=(e.clientY-b.top)/b.height;card.style.transform=`rotateY(${(px-.5)*16}deg) rotateX(${(.5-py)*12}deg)`;$('.front').style.setProperty('--gx',(px*160-80)+'%')});
+ card.addEventListener('pointerleave',()=>card.style.transform='')})();
 
-/* ---------- app demo ---------- */
-(function(){const V=[['v1','Carnet','m1'],['v2','Porta','m2'],['v3','Staff','m3'],['v4','Caixa','m4'],['v5','Comunitat','m5']];
+/* app demo */
+let rp;
+(function(){const V=[['v1','Carnet'],['v2','Porta'],['v3','Staff'],['v4','Caixa'],['v5','Comunitat']];
  const ic=['<rect x="3" y="6" width="18" height="13" rx="2"/>','<path d="M4 8V4h4M20 8V4h-4M4 16v4h4M20 16v4h-4"/>','<path d="M9 4h6M5 8h14v12H5z"/>','<path d="M4 20V10M10 20V4M16 20v-7"/>','<path d="M4 5h16v11H9l-5 4Z"/>'];
- $('#tabbar').innerHTML=V.map((v,i)=>`<button role="tab" aria-selected="${i===0}" data-v="${v[0]}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">${ic[i]}</svg>${v[1]}</button>`).join('');
+ $('#tabbar').innerHTML=V.map((v,i)=>`<button role="tab" aria-selected="${!i}" data-v="${v[0]}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">${ic[i]}</svg>${v[1]}</button>`).join('');
  function show(id){$$('.vw').forEach(v=>v.classList.toggle('on',v.id===id));$$('#tabbar button,#mods button').forEach(b=>b.setAttribute('aria-selected',b.dataset.v===id));$('#ahT').textContent=V.find(v=>v[0]===id)[1];if(id==='v4')fin();vib()}
- $$('#tabbar button').forEach(b=>b.onclick=()=>show(b.dataset.v));$$('#mods button').forEach(b=>b.onclick=()=>show(b.dataset.v));
- // door
+ $$('#tabbar button,#mods button').forEach(b=>b.onclick=()=>show(b.dataset.v));
  const P=[['Laia Martí','4412****K',1],['Pau Ferrer','2087****T',1],['Clara Soler','5530****M',1],['Marc Ribes','7781****Z',0],['Núria Vidal','1199****B',1],['Toni Llopis','3364****R',1]];const inside=new Set();let cnt=212;
- function rp(){const q=$('#q').value.toLowerCase();$('#prs').innerHTML=P.filter(p=>(p[0]+p[1]).toLowerCase().includes(q)).map((p,i)=>{const k=P.indexOf(p),inn=inside.has(k);return `<li class="${inn?'in':''} ${p[2]?'':'no'}"><span class="ini">${p[0].split(' ').map(w=>w[0]).join('')}</span><div>${p[0]}<small>${p[2]?(L==='en'?'Active member':L==='es'?'Socio activo':'Soci actiu'):(L==='en'?'Fee pending':L==='es'?'Cuota pendiente':'Quota pendent')} · ${p[1]}</small></div><button data-k="${k}">${inn?'✓':(L==='en'?'Check in':'Entrar')}</button></li>`}).join('');
-  $$('#prs button').forEach(b=>b.onclick=()=>{const k=+b.dataset.k;if(!P[k][2]){toast(L==='en'?'Fee pending: charge at the door':L==='es'?'Cuota pendiente: cobrar en puerta':'Quota pendent: cobrar a la porta');return}if(!inside.has(k)){inside.add(k);cnt++;$('#cnt').textContent=cnt;vib()}rp()})}
+ rp=function(){const q=$('#q').value.toLowerCase();$('#prs').innerHTML=P.map((p,k)=>[p,k]).filter(([p])=>(p[0]+p[1]).toLowerCase().includes(q)).map(([p,k])=>{const inn=inside.has(k);return `<li class="${inn?'in':''} ${p[2]?'':'no'}"><span class="ini">${p[0].split(' ').map(w=>w[0]).join('')}</span><div>${p[0]}<small>${p[2]?m('act2'):m('pen')} · ${p[1]}</small></div><button data-k="${k}">${inn?'✓':m('ent')}</button></li>`}).join('');
+  $$('#prs button').forEach(b=>b.onclick=()=>{const k=+b.dataset.k;if(!P[k][2])return toast(m('penT'));if(!inside.has(k)){inside.add(k);cnt++;$('#cnt').textContent=cnt;vib()}rp()})};
  $('#q').addEventListener('input',rp);rp();
- setInterval(()=>{if(!document.hidden&&$('#v2').classList.contains('on')&&Math.random()>.5){cnt++;$('#cnt').textContent=cnt}},2500);
- $('#scanb').onclick=()=>{const sv=$('#scanv');sv.classList.add('on');setTimeout(()=>{sv.classList.remove('on');const k=P.findIndex((p,i)=>p[2]&&!inside.has(i));if(k>=0){inside.add(k);cnt++;$('#cnt').textContent=cnt;$('#q').value='';rp();toast('✓ '+P[k][0]);vib()}},1600)};
- // clock
+ setInterval(()=>{if(!document.hidden&&$('#v2').classList.contains('on')&&Math.random()>.5)$('#cnt').textContent=++cnt},2500);
+ $('#scanb').onclick=()=>{$('#scanv').classList.add('on');setTimeout(()=>{$('#scanv').classList.remove('on');const k=P.findIndex((p,i)=>p[2]&&!inside.has(i));if(k>=0){inside.add(k);$('#cnt').textContent=++cnt;$('#q').value='';rp();toast('✓ '+P[k][0]);vib()}},1600)};
  const ck=()=>{const d=new Date();$('#clk').textContent=String(d.getHours()).padStart(2,'0')+':'+String(d.getMinutes()).padStart(2,'0')};ck();setInterval(ck,30000);
- // finances
  const F=[['FEB',3.1,1.9],['ABR',3.8,2.2],['JUN',4.6,2.4],['JUL',4.2,2.3],['SET',6.2,3.4],['OCT',3.9,2.1]];
- function fin(){const mx=7;$('#bars').innerHTML=F.map((f,i)=>`<div><span style="display:flex;gap:2px;align-items:end;height:100%"><i class="a" style="height:${f[1]/mx*100}%;flex:1;animation-delay:${i*.06}s"></i><i class="b" style="height:${f[2]/mx*100}%;flex:1;animation-delay:${i*.06+.03}s"></i></span><small>${f[0]}</small></div>`).join('');
-  const inc=F.reduce((a,f)=>a+f[1],0)*1000,exp=F.reduce((a,f)=>a+f[2],0)*1000;count($('#k1'),inc);count($('#k2'),inc-exp)}
- function count(el,to){const t0=performance.now();(function s(n){const k=Math.min(1,(n-t0)/900),v=Math.round(to*(1-Math.pow(1-k,3)));el.textContent=v.toLocaleString('es-ES')+' €';if(k<1)requestAnimationFrame(s)})(t0)}
+ function fin(){$('#bars').innerHTML=F.map((f,i)=>`<div><span style="display:flex;gap:2px;align-items:end;height:100%"><i class="a" style="height:${f[1]/7*100}%;flex:1;animation-delay:${i*.06}s"></i><i class="b" style="height:${f[2]/7*100}%;flex:1;animation-delay:${i*.06+.03}s"></i></span><small>${f[0]}</small></div>`).join('');const inc=F.reduce((a,f)=>a+f[1],0)*1000,ex=F.reduce((a,f)=>a+f[2],0)*1000;count($('#k1'),inc);count($('#k2'),inc-ex)}
+ function count(el,to){const t0=performance.now();(function s(n){const k=Math.min(1,(n-t0)/900);el.textContent=Math.round(to*(1-Math.pow(1-k,3))).toLocaleString('es-ES')+' €';if(k<1)requestAnimationFrame(s)})(t0)}
  $('#xl').onclick=()=>{const csv='Event;Ingressos;Despeses\n'+F.map(f=>`${f[0]} 2026;${f[1]*1000};${f[2]*1000}`).join('\n');const a=document.createElement('a');a.href=URL.createObjectURL(new Blob(['﻿'+csv],{type:'text/csv'}));a.download='amagatall-2026.csv';a.click();toast(m('xl'))};
  window.renderChk=()=>{const C={va:['Comprovar equip de so','Llistat de porta imprés','Caixa de canvi','Barra reposada'],es:['Comprobar equipo de sonido','Listado de puerta impreso','Caja de cambio','Barra repuesta'],en:['Sound check','Door list printed','Cash float','Bar restocked']}[L];$('#chkl').innerHTML=C.map((c,i)=>`<li><label><input type="checkbox" ${i<1?'checked':''}><span>${c}</span></label></li>`).join('')};
- // swipe between app views on phone
  let sx=null;const scr=$('#scr');scr.addEventListener('touchstart',e=>sx=e.touches[0].clientX,{passive:true});scr.addEventListener('touchend',e=>{if(sx===null)return;const d=e.changedTouches[0].clientX-sx;sx=null;if(Math.abs(d)<60)return;const i=V.findIndex(v=>$('#'+v[0]).classList.contains('on'));const n=Math.max(0,Math.min(V.length-1,i+(d<0?1:-1)));if(n!==i)show(V[n][0])});
 })();
 
-/* ---------- shop ---------- */
-const PR=[{k:'tee',n:{va:'Samarreta Amagatall',es:'Camiseta Amagatall',en:'Amagatall tee'},d:{va:'Cotó orgànic, serigrafia davant i darrere',es:'Algodón orgánico, serigrafía delante y detrás',en:'Organic cotton, front and back print'},p:22,s:1,svg:'<svg viewBox="0 0 120 120"><path d="M38 18 20 30l8 18 10-5v59h44V43l10 5 8-18-18-12c-4 8-12 12-22 12s-18-4-22-12Z" fill="#1d1526" stroke="#efe9df" stroke-width="2"/><text x="60" y="66" text-anchor="middle" font-family="Cond" font-size="12" fill="#f2e600">AMAGATALL</text><text x="60" y="76" text-anchor="middle" font-family="Cond" font-size="6" fill="#efe9df">D\'HILARI</text></svg>',bg:'#f2e600'},
- {k:'hood',n:{va:'Dessuadora Black Box',es:'Sudadera Black Box',en:'Black Box hoodie'},d:{va:'Gruixuda, amb caputxa i logo brodat',es:'Gruesa, con capucha y logo bordado',en:'Heavyweight, embroidered logo'},p:45,s:1,svg:'<svg viewBox="0 0 120 120"><path d="M44 16c4-6 28-6 32 0l22 14-8 20-8-4v58H38V46l-8 4-8-20Z" fill="#f2e600" stroke="#120c18" stroke-width="2"/><path d="M48 16c0 10 6 16 12 16s12-6 12-16" fill="none" stroke="#120c18" stroke-width="2"/><rect x="48" y="70" width="24" height="14" rx="3" fill="none" stroke="#120c18" stroke-width="2"/><text x="60" y="58" text-anchor="middle" font-family="Cond" font-size="8" fill="#120c18">BLACK BOX</text></svg>',bg:'#271d32'},
- {k:'tote',n:{va:'Bossa Overdrive',es:'Bolsa Overdrive',en:'Overdrive tote'},d:{va:'Per als vinils i el que faça falta',es:'Para los vinilos y lo que haga falta',en:'For your records and everything else'},p:14,s:0,svg:'<svg viewBox="0 0 120 120"><path d="M30 40h60l4 66H26Z" fill="#8f6bff"/><path d="M44 40c0-18 32-18 32 0" fill="none" stroke="#120c18" stroke-width="4"/><circle cx="60" cy="74" r="16" fill="#120c18"/><circle cx="60" cy="74" r="4" fill="#8f6bff"/></svg>',bg:'#efe9df'},
- {k:'cap',n:{va:'Gorra Keep it underground',es:'Gorra Keep it underground',en:'Keep it underground cap'},d:{va:'Talla única ajustable',es:'Talla única ajustable',en:'One size, adjustable'},p:20,s:0,svg:'<svg viewBox="0 0 120 120"><path d="M24 70c0-24 16-38 36-38s36 14 36 38Z" fill="#120c18" stroke="#efe9df" stroke-width="2"/><path d="M60 70h46c0 6-6 10-14 10H60Z" fill="#120c18" stroke="#efe9df" stroke-width="2"/><text x="60" y="60" text-anchor="middle" font-family="Cond" font-size="7" fill="#f2e600">KEEP IT UNDERGROUND</text></svg>',bg:'#8f6bff'}];
-const sizes={};const cart={};
-function renderProds(){$('#prods').innerHTML=PR.map(p=>`<article class="prod"><div class="ph" style="background:${p.bg}">${p.svg}</div><div class="bd"><h3>${p.n[L]}</h3><p>${p.d[L]}</p>${p.s?`<div class="sz" role="group">${['S','M','L','XL'].map(z=>`<button aria-pressed="${sizes[p.k]===z}" data-k="${p.k}" data-z="${z}">${z}</button>`).join('')}</div>`:''}<div class="rw"><span class="pr">${p.p} €</span><button class="add" data-k="${p.k}">+</button></div></div></article>`).join('');
+/* shop */
+const PR=[{k:'tee',n:{va:'Samarreta Amagatall',es:'Camiseta Amagatall',en:'Amagatall tee'},d:{va:'Cotó orgànic, serigrafia davant i darrere',es:'Algodón orgánico, serigrafía delante y detrás',en:'Organic cotton, front and back print'},p:22,s:1,bg:'var(--red)',tg:'Merch',svg:'<svg viewBox="0 0 120 120"><path d="M38 18 20 30l8 18 10-5v59h44V43l10 5 8-18-18-12c-4 8-12 12-22 12s-18-4-22-12Z" fill="#ede3dd"/><text x="60" y="64" text-anchor="middle" font-family="Lexend Exa" font-size="8.5" letter-spacing="-.5" fill="#ff0002">AMAGATALL</text><text x="60" y="72" text-anchor="middle" font-family="Lexend Exa" font-size="4" fill="#ff0002">D\'HILARI</text></svg>'},
+ {k:'hood',n:{va:'Dessuadora Black Box',es:'Sudadera Black Box',en:'Black Box hoodie'},d:{va:'Gruixuda, amb caputxa i logo brodat',es:'Gruesa, con capucha y logo bordado',en:'Heavyweight, embroidered logo'},p:45,s:1,bg:'#202020',tg:'Black Box',svg:'<svg viewBox="0 0 120 120"><path d="M44 16c4-6 28-6 32 0l22 14-8 20-8-4v58H38V46l-8 4-8-20Z" fill="#ff0002"/><path d="M48 16c0 10 6 16 12 16s12-6 12-16" fill="none" stroke="#202020" stroke-width="2"/><rect x="48" y="70" width="24" height="14" fill="none" stroke="#202020" stroke-width="2"/><text x="60" y="58" text-anchor="middle" font-family="Lexend Exa" font-size="6" fill="#ede3dd">BLACK BOX</text></svg>'},
+ {k:'tote',n:{va:'Bossa Overdrive',es:'Bolsa Overdrive',en:'Overdrive tote'},d:{va:'Per als vinils i el que faça falta',es:'Para los vinilos y lo que haga falta',en:'For your records and everything else'},p:14,s:0,bg:'var(--blue)',tg:'Overdrive',svg:'<svg viewBox="0 0 120 120"><path d="M30 40h60l4 66H26Z" fill="#ede3dd"/><path d="M44 40c0-18 32-18 32 0" fill="none" stroke="#ede3dd" stroke-width="4"/><circle cx="60" cy="74" r="16" fill="#2443ff"/><circle cx="60" cy="74" r="4" fill="#ede3dd"/></svg>'},
+ {k:'cap',n:{va:'Gorra Keep it underground',es:'Gorra Keep it underground',en:'Keep it underground cap'},d:{va:'Talla única ajustable',es:'Talla única ajustable',en:'One size, adjustable'},p:20,s:0,bg:'#e8d5cd',tg:'Merch',svg:'<svg viewBox="0 0 120 120"><path d="M24 70c0-24 16-38 36-38s36 14 36 38Z" fill="#ff0002"/><path d="M60 70h46c0 6-6 10-14 10H60Z" fill="#b80001"/><text x="60" y="60" text-anchor="middle" font-family="Lexend Exa" font-size="5" fill="#ede3dd">KEEP IT UNDERGROUND</text></svg>'}];
+const sizes={},cart={};
+function renderProds(){$('#prods').innerHTML=PR.map(p=>`<article class="prod"><div class="ph" style="background:${p.bg}">${p.svg}<span class="tg">${p.tg}</span></div><h3>${p.n[L]}</h3><p>${p.d[L]}</p>${p.s?`<div class="sz">${['S','M','L','XL'].map(z=>`<button aria-pressed="${sizes[p.k]===z}" data-k="${p.k}" data-z="${z}">${z}</button>`).join('')}</div>`:''}<div class="rw"><span class="pr">${p.p} €</span><button class="add" data-k="${p.k}">+ ${L==='en'?'Add':L==='es'?'Añadir':'Afegir'}</button></div></article>`).join('');
  $$('.sz button').forEach(b=>b.onclick=()=>{sizes[b.dataset.k]=b.dataset.z;renderProds();vib()});
  $$('.add').forEach(b=>b.onclick=()=>{const p=PR.find(x=>x.k===b.dataset.k);if(p.s&&!sizes[p.k])return toast(m('sz'));const id=p.k+(p.s?'-'+sizes[p.k]:'');cart[id]=cart[id]||{p,q:0,z:sizes[p.k]};cart[id].q++;renderBag();toast(m('ad'));vib()})}
 const bag=$('#bag'),veil=$('#veil');function openBag(o){bag.classList.toggle('on',o);veil.classList.toggle('on',o);bag.setAttribute('aria-hidden',!o)}
-function renderBag(){const ks=Object.keys(cart);let tot=0,n=0;$('#bagl').innerHTML=ks.map(k=>{const c=cart[k];tot+=c.p.p*c.q;n+=c.q;return `<li><span>${c.p.n[L]}${c.z?' · '+c.z:''}</span><span class="qt"><button data-k="${k}" data-d="-1">−</button>${c.q}<button data-k="${k}" data-d="1">+</button></span><b>${c.p.p*c.q} €</b></li>`}).join('')||`<p class="mute" style="font-size:14px">—</p>`;
+function renderBag(){const ks=Object.keys(cart);let tot=0,n=0;$('#bagl').innerHTML=ks.map(k=>{const c=cart[k];tot+=c.p.p*c.q;n+=c.q;return `<li><span>${c.p.n[L]}${c.z?' · '+c.z:''}</span><span class="qt"><button data-k="${k}" data-d="-1">−</button>${c.q}<button data-k="${k}" data-d="1">+</button></span><b>${c.p.p*c.q} €</b></li>`}).join('')||'<p style="color:var(--ink);opacity:.6">—</p>';
  $('#bagt').textContent=tot+' €';const b=$('#bagn');b.textContent=n;b.classList.toggle('on',n>0);
  $$('#bagl button').forEach(x=>x.onclick=()=>{cart[x.dataset.k].q+=+x.dataset.d;if(cart[x.dataset.k].q<=0)delete cart[x.dataset.k];renderBag()})}
-$('#bagb').onclick=()=>openBag(true);$('#bagx').onclick=()=>openBag(false);veil.onclick=()=>openBag(false);addEventListener('keydown',e=>{if(e.key==='Escape')openBag(false)});$('#pay').onclick=()=>toast(m('py'));
-(function(){let by=null;bag.addEventListener('touchstart',e=>{if(innerWidth>700)return;by=e.touches[0].clientY;bag.style.transition='none'},{passive:true});bag.addEventListener('touchmove',e=>{if(by===null)return;bag.style.transform=`translateY(${Math.max(0,e.touches[0].clientY-by)}px)`},{passive:true});bag.addEventListener('touchend',e=>{if(by===null)return;const d=e.changedTouches[0].clientX,dy=e.changedTouches[0].clientY-by;by=null;bag.style.transition='';bag.style.transform='';if(dy>110)openBag(false)})})();
-renderBag();
+$('#bagb').onclick=()=>openBag(true);$('#bagx').onclick=()=>openBag(false);veil.onclick=()=>openBag(false);$('#pay').onclick=()=>toast(m('py'));
+(function(){let by=null;bag.addEventListener('touchstart',e=>{if(innerWidth>700)return;by=e.touches[0].clientY;bag.style.transition='none'},{passive:true});bag.addEventListener('touchmove',e=>{if(by!==null)bag.style.transform=`translateY(${Math.max(0,e.touches[0].clientY-by)}px)`},{passive:true});bag.addEventListener('touchend',e=>{if(by===null)return;const dy=e.changedTouches[0].clientY-by;by=null;bag.style.transition='';bag.style.transform='';if(dy>110)openBag(false)})})();
 
-/* ---------- init ---------- */
 let saved='va';try{saved=localStorage.getItem('amg-l')||'va'}catch(_){}
 setL(saved);
 </script>
